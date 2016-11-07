@@ -1,11 +1,11 @@
 export default class ProjectService{
-	constructor($http, API_URL){
+	constructor($http, constants){
 		this.$http = $http;
-		this.API_URL = API_URL;
+		this.constants = constants;
 	}
 
 	getProjects(){
-		this.$http.get(`${this.API_URL.BASE_API}${this.API_URL.PROJECT}`)
-		.then(response => response.result);
+		return this.$http.get(`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}`)
+		.then(response => response.data);
 	}
 }

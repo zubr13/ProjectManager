@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 var ProjectSchema = new mongoose.Schema({
   name: String,
   description: String,
-  deadline: {type: Date, default: Date.now },
+  deadline: {type: Date, default: Date.now},
   client: String,
   status:  String,
   files: [{

@@ -24,10 +24,11 @@ import navbar from './components/navbar/navbar.component';
 import main from './states/main/main.component';
 import constants from './app.constants';
 import util from './components/util/util.module';
+import projects from '../project/states/projects/projects.component';
 import './app.scss';
 
 angular.module('projectManagerApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io',
-    uiRouter, uiBootstrap, _Auth, account, admin, navbar, main, constants, util
+    uiRouter, uiBootstrap, _Auth, account, admin, navbar, main, constants, util, projects
   ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
@@ -46,6 +47,6 @@ angular.module('projectManagerApp', [ngCookies, ngResource, ngSanitize, 'btford.
 angular.element(document)
   .ready(() => {
     angular.bootstrap(document, ['projectManagerApp'], {
-      strictDi: true
+      strictDi: false
     });
   });

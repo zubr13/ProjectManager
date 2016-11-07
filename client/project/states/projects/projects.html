@@ -1,1 +1,14 @@
-<div>This is the projects view.</div>
+<div class="project-card" ng-repeat="project in projectsCtrl.projects">
+	<h3>{{project.name}}</h3>
+	<h4>Опис: <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></h4>
+	<p class="description"> {{project.description}}</p>
+	<h4>Дедлайн: <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></h4>
+	<span class="highlight">{{project.deadline}}</span>
+	<h4 class="client">Клієнт: <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  {{project.client}}</h4>
+	<h4>Статус: </h4>
+	<span class="highlight">{{project.status}}</span>
+	<h4 class="executors">Розробники: </h4>
+	<div ng-repeat="executor in project.executors"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>: {{executor.name}}</p>
+	</div>
+</div>
+<button class="btn btn-success">Редагувати</button>

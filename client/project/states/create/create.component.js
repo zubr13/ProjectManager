@@ -5,8 +5,6 @@ const uiRouter = require('angular-ui-router');
 
 import routes from './create.routes';
 
-import Project from '../../models/project';
-
 export class CreateComponent {
   /*@ngInject*/
   constructor() {
@@ -22,9 +20,7 @@ export class CreateComponent {
   }
 
   createProject(){
-    var project = new Project(this.title, this.description, this.deadline, this.client,
-      this.status, this.executors);
-    this.$state.go();
+    //this.$state.go();
   }
 }
 

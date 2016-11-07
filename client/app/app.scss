@@ -3,6 +3,7 @@ $icon-font-path: '/assets/fonts/bootstrap/';
 @import '~bootstrap-social/bootstrap-social.scss';
 $fa-font-path: '/assets/fonts/font-awesome/';
 @import '~font-awesome/scss/font-awesome';
+@import '../constants';
 
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
 
@@ -10,10 +11,13 @@ $fa-font-path: '/assets/fonts/font-awesome/';
  * App-wide Styles
  */
 
+ body{
+ 	background: #ebeff1;
+ }
+
 .browserupgrade {
   margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
+  color: $primary-text-color;
   padding: 0.2em 0;
 }
 
@@ -23,6 +27,7 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 @import 'components/oauth-buttons/oauth-buttons';
 @import 'states/admin/admin';
 @import 'states/main/main';
+@import '../constants';
 @import '../project/states/create/create';
 @import '../project/states/projects/projects';
 /* endinject */

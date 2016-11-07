@@ -1,0 +1,31 @@
+.project-card{
+	display: inline-block;
+	margin: 20px;
+	padding: 20px;
+	width: 30%;
+	border: 1px solid black;
+	border-radius: 5px;
+	background: #FFFFFF;
+}
+
+.description{
+	padding: 8px;
+}
+
+.client{
+	padding: 12px 0;
+}
+
+.highlight{
+	padding: 4px;
+	text-align: center;
+	border: 1px solid #398439;
+	border-radius: 5px;
+	color: white;
+	font-size: 16px; 
+	background: #449d44;
+}
+
+.executors{
+	padding-top: 12px;
+}

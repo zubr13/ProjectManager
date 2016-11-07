@@ -63,7 +63,11 @@ User.find({}).remove()
   .then(() => {
     Project.create({
       name: "Проект 1",
-      description: "Опис проекту 1",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dolor, tempus sit amet leo" +
+      "vitae, consectetur suscipit urna. Vestibulum ullamcorper mauris nec ante facilisis, sed tincidunt metus" + 
+      "dignissim. Maecenas imperdiet orci sit amet tellus congue, ullamcorper rutrum nibh dignissim. Integer tempor" + 
+      "dignissim sodales. Sed accumsan, est nec varius feugiat, sem purus elementum massa, accumsan vehicula eros" +
+      " diam at lorem",
       client: "Іван Іванов",
       status:  "Розробка",
       files: [{
@@ -74,7 +78,11 @@ User.find({}).remove()
       }]
     }, { 
       name: "Проект 2",
-      description: "Опис проекту 2",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dolor, tempus sit amet leo" +
+      "vitae, consectetur suscipit urna. Vestibulum ullamcorper mauris nec ante facilisis, sed tincidunt metus" + 
+      "dignissim. Maecenas imperdiet orci sit amet tellus congue, ullamcorper rutrum nibh dignissim. Integer tempor" + 
+      "dignissim sodales. Sed accumsan, est nec varius feugiat, sem purus elementum massa, accumsan vehicula eros" +
+      " diam at lorem",
       client: "Джон Сміт",
       status:  "Розробка",
       files: [{

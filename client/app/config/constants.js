@@ -1,7 +1,7 @@
-var API_URL = {
+const API_URL = {
 	BASE: "http:localhost:3000",
-	BASE_API: "http:localhost:3000/api",
+	API: "/api",
 	PROJECT: "project"
 }
 
-export default API_URL;
+export {API_URL};
