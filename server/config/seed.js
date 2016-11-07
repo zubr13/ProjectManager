@@ -6,6 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import Project from '../api/project/project.model';
 
 Thing.find({}).remove()
   .then(() => {
@@ -57,3 +58,34 @@ User.find({}).remove()
       console.log('finished populating users');
     });
   });
+
+  Project.find({}).remove()
+  .then(() => {
+    Project.create({
+      name: "Проект 1",
+      description: "Опис проекту 1",
+      client: "Іван Іванов",
+      status:  "Розробка",
+      files: [{
+        name:  "filePath"
+      }],
+      executors: [{
+        name: "Вася Пупкін"
+      }]
+    }, { 
+      name: "Проект 2",
+      description: "Опис проекту 2",
+      client: "Джон Сміт",
+      status:  "Розробка",
+      files: [{
+        name:  "filePath"
+      }],
+      executors: [{
+        name: "Денис Шевченко"
+      }]
+    })
+    .then(() => {
+      console.log('finished creating projects');
+    });
+  });
+

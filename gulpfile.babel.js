@@ -32,7 +32,7 @@ const paths = {
         scripts: [
             `${clientPath}/**/!(*.spec|*.mock).js`
         ],
-        styles: [`${clientPath}/{app,components}/**/*.scss`],
+        styles: [`${clientPath}/**/*.scss`],
         mainStyle: `${clientPath}/app/app.scss`,
         views: `${clientPath}/{app,components}/**/*.html`,
         mainView: `${clientPath}/index.html`,
@@ -201,6 +201,7 @@ gulp.task('inject:scss', () => {
                 transform: (filepath) => {
                     let newPath = filepath
                         .replace(`/${clientPath}/app/`, '')
+                        .replace(`/${clientPath}`, '..')
                         .replace(`/${clientPath}/components/`, '../components/')
                         .replace(/_(.*).scss/, (match, p1, offset, string) => p1)
                         .replace('.scss', '');
@@ -492,7 +493,7 @@ gulp.task('build:images', () => {
             plugins.imagemin.svgo({plugins: [{removeViewBox: false}]})
         ]))
         .pipe(plugins.rev())
-        .pipe(gulp.dest(`${paths.dist}/${clientPath}/assets/images`))
+        .pipe(gulp.dest(`${paths.dist}/${clientPath}/app/assets/images`))
         .pipe(plugins.rev.manifest(`${paths.dist}/${paths.client.revManifest}`, {
             base: `${paths.dist}/${clientPath}/assets`,
             merge: true

@@ -1,7 +1,7 @@
 'use strict';
 
 import angular from 'angular';
-import constants from '../../app/app.constants';
+import constants from '../../app.constants';
 import util from '../util/util.module';
 import ngCookies from 'angular-cookies';
 import {
