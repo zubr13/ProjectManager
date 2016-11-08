@@ -24,11 +24,12 @@ import navbar from './components/navbar/navbar.component';
 import main from './states/main/main.component';
 import constants from './app.constants';
 import util from './components/util/util.module';
-import projects from '../project/states/projects/projects.component';
+import projectsState from '../project/states/projects/projects.component';
+import projectState from '../project/states/project/project.component';
 import './app.scss';
 
 angular.module('projectManagerApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io',
-    uiRouter, uiBootstrap, _Auth, account, admin, navbar, main, constants, util, projects
+    uiRouter, uiBootstrap, _Auth, account, admin, navbar, main, constants, util, projectsState, projectState
   ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

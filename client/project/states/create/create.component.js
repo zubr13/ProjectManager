@@ -4,23 +4,28 @@ const angular = require('angular');
 const uiRouter = require('angular-ui-router');
 
 import routes from './create.routes';
+import projectService from '../../services/project-service';
 
 export class CreateComponent {
   /*@ngInject*/
-  constructor() {
+  constructor(projectService) {
     this.addExecutorMode = false;
-    this.executors = [];
+    this.currentProject = {};
+    this.currentProject.executors = [];
+    this.projectService = projectService;
   }
 
   addExecutor(){
     if(this.addExecutorMode){
-      this.executors.push(this.executor);
+      this.currentProject.executors.push({name: this.executor});
       this.executor = "";
     }
   }
 
   createProject(){
     //this.$state.go();
+    //console.log(this.currentProject);
+    this.projectService.createProject(this.currentProject);
   }
 }
 
@@ -31,4 +36,5 @@ export default angular.module('projectManagerApp.create', [uiRouter])
     controller: CreateComponent,
     controllerAs: 'createCtrl'
   })
+  .service('projectService', projectService)
   .name;

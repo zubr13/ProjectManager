@@ -13,6 +13,9 @@ var ProjectSchema = new mongoose.Schema({
   }],
   executors: [{
   	name: String
+  }],
+  sprints: [{
+    id: String
   }]
 });
 

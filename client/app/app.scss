@@ -28,6 +28,10 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 @import 'states/admin/admin';
 @import 'states/main/main';
 @import '../constants';
+@import '../project/components/project-details/project-details.component';
 @import '../project/states/create/create';
+@import '../project/states/project/project';
 @import '../project/states/projects/projects';
+@import '../sprint/components/sprints-list/sprints-list.component';
+@import '../sprint/states/sprint/sprint';
 /* endinject */

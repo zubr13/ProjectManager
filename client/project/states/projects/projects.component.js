@@ -9,8 +9,8 @@ import ProjectService from '../../services/project-service';
 
 export class ProjectsComponent {
   /*@ngInject*/
-  constructor(ProjectService) {
-    this.message = 'Hello';
+  constructor(ProjectService, $state) {
+    this.$state = $state;
     this.ProjectService = ProjectService;
     this.projects = [];
     this.getProjects();
@@ -23,8 +23,14 @@ export class ProjectsComponent {
         project.deadline = new Date(project.deadline).toLocaleString();
         return project;
       })
-      return this.projects;
+      return this.project
     });
+  }
+  
+  deleteProject(project){
+      const deletedIndex = this.projects.indexOf(project);
+      this.projects.splice(deletedIndex, 1);
+    this.ProjectService.deleteProject(project._id);
   }
 }
 

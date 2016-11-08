@@ -1,3 +1,8 @@
+.projects-container{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
 .project-card{
 	display: inline-block;
 	margin: 20px;

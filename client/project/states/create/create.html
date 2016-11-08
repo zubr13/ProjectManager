@@ -1,8 +1,8 @@
-<form action="" class="form-horizontal">
+<form action="" class="form-horizontal create-project-form">
 	<div class="form-group">
 	    <label for="projectName" class="col-sm-2 control-label">Назва проекту</label>
 	    <div class="col-sm-4">
-	      <input type="text" ng-model="createCtrl.title" class="form-control" id="projectName" placeholder="Назва проекту">
+	      <input type="text" ng-model="createCtrl.currentProject.title" class="form-control" id="projectName" placeholder="Назва проекту">
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
@@ -10,7 +10,7 @@
  	<div class="form-group">
 	    <label for="description" class="col-sm-2 control-label">Опис проекту</label>
 	    <div class="col-sm-4">
-	      <textarea ng-model="createCtrl.description" class="form-control" rows="5" id="description"></textarea>
+	      <textarea ng-model="createCtrl.currentProject.description" class="form-control" rows="5" id="description"></textarea>
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
@@ -18,7 +18,7 @@
  	<div class="form-group">
 	    <label for="deadline" class="col-sm-2 control-label">Дедлайн</label>
 	    <div class="col-sm-4">
-	      <input type="date" ng-model="createCtrl.deadline" class="form-control" id="deadline">
+	      <input type="date" ng-model="createCtrl.currentProject.deadline" class="form-control" id="deadline">
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
@@ -26,7 +26,7 @@
  	<div class="form-group">
 	    <label for="projectClient" class="col-sm-2 control-label">Клієнт</label>
 	    <div class="col-sm-4">
-	      <input type="text" ng-model="createCtrl.client" class="form-control" id="projectClient" placeholder="Клієнт">
+	      <input type="text" ng-model="createCtrl.currentProject.client" class="form-control" id="projectClient" placeholder="Клієнт">
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
@@ -34,7 +34,7 @@
  	<div class="form-group">
 	    <label for="project-status" class="col-sm-2 control-label">Статус</label>
 	    <div class="col-sm-4">
-	      <select class="form-control" id="project-status" ng-model="createCtrl.status">
+	      <select class="form-control" id="project-status" ng-model="createCtrl.currentProject.status">
 			  <option>Планування</option>
 			  <option>Аналіз</option>
 			  <option>Розробка</option>
@@ -43,19 +43,19 @@
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
-
+<!-- 
  	<div class="form-group">
 	    <label for="attachFile" class="col-sm-2 control-label">Файли</label>
 	    <div class="col-sm-4">
 	    	<input type='file' name='files[]' multiple />
 	    </div>
 	    <div class="col-sm-6"></div>
- 	</div>
+ 	</div> -->
 
  	<div class="form-group">
-	    <label for="attachFile" class="col-sm-2 control-label">Виконавці</label>
+	    <label for="attachFile" class="col-sm-2 control-label" ng-click="createCtrl.createProject()">Виконавці</label>
 	    <div class="col-sm-4">
-	    	<span class="executor-name" ng-repeat = "executor in createCtrl.executors">{{executor}}</span>
+	    	<span class="executor-name" ng-repeat = "executor in createCtrl.currentProject.executors">{{executor.name}}</span>
 	    	<input ng-model="createCtrl.executor" ng-if="createCtrl.addExecutorMode" type='text'/>
 	    	<a href="" ng-click="createCtrl.addExecutor(); createCtrl.addExecutorMode = !createCtrl.addExecutorMode">
 	    		<span class="addExecutorButton glyphicon glyphicon-plus"></span>
