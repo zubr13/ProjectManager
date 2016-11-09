@@ -78,6 +78,12 @@ User.find({}).remove()
       }],
       executors: [{
         name: "Вася Пупкін"
+      }],
+      sprints: [{
+        id: "16cb91bdc3464f14678934ca",
+      }, 
+      {
+        id: "16cb91bdc3464f14678934cb"
       }]
     }, { 
       name: "Проект 2",
@@ -159,24 +165,30 @@ User.find({}).remove()
 Task.find({}).remove()
   .then(() => {
     Task.create({
+      _id: mongoose.mongo.ObjectId('56cb91bdc3464f14678934ca'),
       name: "Task 1",
       description: "Description",
       creator: "Creator",
       priority: "High"
     },
     {
+      _id: mongoose.mongo.ObjectId('56cb91bdc3464f14678934cb'),
+      name: "Task 1",
       name: "Task 2",
       description: "Description",
       creator: "Creator",
       priority: "High"
     },
     {
+      _id: mongoose.mongo.ObjectId('56cb91bdc3464f14678934cc'),
+      name: "Task 1",
       name: "Task 2",
       description: "Description",
       creator: "Creator",
       priority: "High"
     },
     {
+      _id: mongoose.mongo.ObjectId('56cb91bdc3464f14678934cd'),
       name: "Task 4",
       description: "Description",
       creator: "Creator",
@@ -190,6 +202,7 @@ Task.find({}).remove()
 Sprint.find({}).remove()
   .then(() => {
     Sprint.create({
+      _id: "16cb91bdc3464f14678934ca",
       name: "Sprint 1",
       description: "Description",
       goal: "Implement the first part of functionality",
@@ -201,7 +214,30 @@ Sprint.find({}).remove()
         role: "Developer"
       }],
       tasks: [{
-        id: "12d1sa"
+        id: "56cb91bdc3464f14678934ca"
+      },
+      {
+        id: "56cb91bdc3464f14678934cb"
+      }],
+      active: true
+    },
+    {
+      _id: "16cb91bdc3464f14678934cb",
+      name: "Sprint 1",
+      description: "Description",
+      goal: "Implement the first part of functionality",
+      storyPoints: 120,
+      endDate: new Date(2017, 4, 12, 0, 0, 0),
+      participants: [{
+        id: "1",
+        name: "Vasiliy Pupkin",
+        role: "Developer"
+      }],
+      tasks: [{
+        id: "56cb91bdc3464f14678934ca"
+      },
+      {
+        id: "56cb91bdc3464f14678934cb"
       }],
       active: true
     })
