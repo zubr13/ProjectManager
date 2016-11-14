@@ -19,11 +19,11 @@ export class ProjectsComponent {
   getProjects(){
     this.ProjectService.getProjects().then(projects => {
       this.projects = projects;
-      this.projects.map(function(project) {
+      this.projects.map(project => {
         project.deadline = new Date(project.deadline).toLocaleString();
         return project;
-      })
-      return this.project
+      });
+      return this.projects;
     });
   }
   

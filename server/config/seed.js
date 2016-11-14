@@ -102,7 +102,7 @@ User.find({}).remove()
           creator: "Олександр Балан",
           asignee: "Савкін Дмитро",
           storyPoint: 2,
-          status: "active",
+          status: "Активний",
           priority: "high",
           implementationTime: "2d 6h"
         },{
@@ -111,8 +111,8 @@ User.find({}).remove()
           creator: "Олександр Балан",
           asignee: "Іванов Іван",
           storyPoint: 2,
-          status: "active",
-          priority: "high",
+          status: "Активний",
+          priority: "Високий",
           implementationTime: "2d 6h"
         }]
       }]
@@ -165,8 +165,8 @@ User.find({}).remove()
           creator: "Олександр Балан",
           asignee: "Іванов Іван",
           storyPoint: 2,
-          status: "active",
-          priority: "high",
+          status: "Активний",
+          priority: "Високий",
           implementationTime: "2d 6h"
         }]
       }]
@@ -210,8 +210,8 @@ User.find({}).remove()
           creator: "Олександр Балан",
           asignee: "Савкін Дмитро",
           storyPoint: 2,
-          status: "active",
-          priority: "high",
+          status: "Активний",
+          priority: "Високий",
           implementationTime: "2d 6h"
         },{
           name: "Авторизація через Facebook",

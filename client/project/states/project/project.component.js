@@ -21,7 +21,17 @@ export class ProjectComponent {
     this.projectService.getProjectById(this.$stateParams.id)
       .then(project => {
         this.project = project;
+        this.project.deadline = new Date(this.project.deadline).toLocaleString();
+        this.formatSprintDate(project.sprints);
       });
+  }
+
+  formatSprintDate(sprints){
+    sprints.map(sprint => {
+        sprint.beginDate = new Date(sprint.beginDate).toLocaleString();
+        sprint.endDate = new Date(sprint.endDate).toLocaleString();
+        return sprint; 
+    });
   }
 }
 

@@ -1,24 +1,37 @@
 <h3>Спрінти: </h3>
-<span>{{sprintsListComponent.sprints.length}}</span>
 <div ng-repeat="sprint in $ctrl.sprints">
+	<h4>Назва спрінту: </h4>
 	<div>{{sprint.name}}</div>
+	<h4>Опис спрінту</h4>
 	<div>{{sprint.description}}</div>
+	<h4>Мета спрінту: </h4>
 	<div>{{sprint.goal}}</div>
+	<h4>Дата початку: </h4>
 	<div>{{sprint.beginDate}}</div>
+	<h4>Дата завершення: </h4>
 	<div>{{sprint.endDate}}</div>
+	<h4>Учасники спринту: </h4>
 	<div ng-repeat="participant in sprint.participants">
-		<span>{{participant.name}}</span>
-		<span>{{participant.role}}</span>
+		<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span>{{participant.name}}</span>
+		<div>{{participant.role}}</div>
 	</div>
 	<h3>Задачі: </h3>
 	<div ng-repeat="task in sprint.tasks">
+		<h4>Назва задачі</h4>
 		<span>{{task.name}}</span>
-		<span>{{task.decsription}}</span>
+		<h4>Опис задачі</h4>
+		<span>{{task.description}}</span>
+		<h4>Створив: </h4>
 		<div>{{task.creator}}</div>
+		<h4>Виконавець: </h4>
 		<div>{{task.asignee}}</div>
+		<h4>Оцінка: </h4>
 		<div>{{task.storyPoint}}</div>
+		<h4>Статус: </h4>
         <div>{{task.status}}</div>
+        <h4>Пріорітет: </h4>
         <div>{{task.priority}}</div>
+        <h4>Час виконання: </h4>
         <div>{{task.implementationTime}}</div>
 	</div>
 </div>

@@ -4,7 +4,7 @@ const angular = require('angular');
 export class sprintsListComponent {
   /*@ngInject*/
   constructor() {
-    this.message = 'World';
+    
   }
 }
 

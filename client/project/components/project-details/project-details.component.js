@@ -6,7 +6,6 @@ import sprintsList from '../../../sprint/components/sprints-list/sprints-list.co
 export class projectDetailsComponent {
   /*@ngInject*/
   constructor() {
-    
   }
 }
 
