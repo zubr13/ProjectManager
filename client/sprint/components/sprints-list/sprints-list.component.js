@@ -11,7 +11,7 @@ export class sprintsListComponent {
 export default angular.module('projectManagerApp.sprints-list', [])
   .component('sprintsList', {
     template: require('./sprints-list.component.html'),
-    bindings: {},
+    bindings: { sprints: "<"},
     controller: sprintsListComponent
   })
   .name;

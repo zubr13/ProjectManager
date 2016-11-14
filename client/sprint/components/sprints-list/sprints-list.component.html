@@ -1,1 +1,24 @@
-<div>Sprints list</div>
+<h3>Спрінти: </h3>
+<span>{{sprintsListComponent.sprints.length}}</span>
+<div ng-repeat="sprint in $ctrl.sprints">
+	<div>{{sprint.name}}</div>
+	<div>{{sprint.description}}</div>
+	<div>{{sprint.goal}}</div>
+	<div>{{sprint.beginDate}}</div>
+	<div>{{sprint.endDate}}</div>
+	<div ng-repeat="participant in sprint.participants">
+		<span>{{participant.name}}</span>
+		<span>{{participant.role}}</span>
+	</div>
+	<h3>Задачі: </h3>
+	<div ng-repeat="task in sprint.tasks">
+		<span>{{task.name}}</span>
+		<span>{{task.decsription}}</span>
+		<div>{{task.creator}}</div>
+		<div>{{task.asignee}}</div>
+		<div>{{task.storyPoint}}</div>
+        <div>{{task.status}}</div>
+        <div>{{task.priority}}</div>
+        <div>{{task.implementationTime}}</div>
+	</div>
+</div>

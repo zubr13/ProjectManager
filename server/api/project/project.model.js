@@ -7,15 +7,32 @@ var ProjectSchema = new mongoose.Schema({
   description: String,
   deadline: {type: Date, default: Date.now},
   client: String,
-  status:  String,
+  status: String,
   files: [{
   	path:  String
   }],
-  executors: [{
-  	name: String
-  }],
   sprints: [{
-    id: String
+    name: String,
+    description: String,
+    goal: String,
+    storyPoints: Number,
+    beginDate: {type: Date, default: Date.now},
+    endDate: {type: Date},
+    participants: [{
+      name: String,
+      role: String
+    }],
+    tasks: [{
+      name: String,
+      description: String,
+      creator: String,
+      asignee: String,
+      storyPoint: Number,
+      status: String,
+      priority: String,
+      implementationTime: String
+    }],
+    active: Boolean
   }]
 });
 

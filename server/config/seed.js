@@ -8,8 +8,6 @@
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Project from '../api/project/project.model';
-import Task from '../api/task/task.model';
-import Sprint from '../api/sprint/sprint.model';
 
 Thing.find({}).remove()
   .then(() => {
@@ -71,177 +69,163 @@ User.find({}).remove()
       "dignissim. Maecenas imperdiet orci sit amet tellus congue, ullamcorper rutrum nibh dignissim. Integer tempor" + 
       "dignissim sodales. Sed accumsan, est nec varius feugiat, sem purus elementum massa, accumsan vehicula eros" +
       " diam at lorem",
-      client: "Іван Іванов",
+      deadline: new Date(2017, 7, 25),
+      client: "Іван Ковальов",
       status:  "Розробка",
       files: [{
         name:  "filePath"
-      }],
-      executors: [{
-        name: "Вася Пупкін"
       }],
       sprints: [{
-        id: "16cb91bdc3464f14678934ca",
-      }, 
-      {
-        id: "16cb91bdc3464f14678934cb"
+        name: "Cпринт 1",
+        description: "Реалізація початкового функціоналу",
+        goal: "Розробити каркас веб-додатку",
+        storyPoints: 90,
+        beginDate: new Date(2016, 5, 15),
+        endDate: new Date(2015, 6, 15),
+        active: true,
+        participants: [{
+            name: "Іванов Іван",
+            role: "Розробник"
+          },
+          {
+            name: "Пяточкін Дмитро",
+            role: "Бізнес-аналітик"
+          },
+          {
+            name: "Савкін Дмитро",
+            role: "Розробник"
+          }
+        ],
+        tasks: [{
+          name: "Розробка архітектури ядра",
+          description: "Розробка архітектури основної частини веб-додатку",
+          creator: "Олександр Балан",
+          asignee: "Савкін Дмитро",
+          storyPoint: 2,
+          status: "active",
+          priority: "high",
+          implementationTime: "2d 6h"
+        },{
+          name: "Розробка модулю для генерації звіту",
+          description: "Розробка модулю, що буде генерувати звіт по продажу для користувача",
+          creator: "Олександр Балан",
+          asignee: "Іванов Іван",
+          storyPoint: 2,
+          status: "active",
+          priority: "high",
+          implementationTime: "2d 6h"
+        }]
       }]
-    }, { 
-      name: "Проект 2",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dolor, tempus sit amet leo" +
-      "vitae, consectetur suscipit urna. Vestibulum ullamcorper mauris nec ante facilisis, sed tincidunt metus" + 
-      "dignissim.",
-      client: "Джон Сміт",
-      status:  "Розробка",
-      files: [{
-        name:  "filePath"
-      }],
-      executors: [{
-        name: "Денис Шевченко"
-      }]
-    },
-    { 
-      name: "Проект 2",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dolor, tempus sit amet leo" +
-      "vitae, consectetur suscipit urna. Vestibulum ullamcorper mauris nec ante facilisis, sed tincidunt metus" + 
-      "dignissim.",
-      client: "Джон Сміт",
-      status:  "Розробка",
-      files: [{
-        name:  "filePath"
-      }],
-      executors: [{
-        name: "Денис Шевченко"
-      }]
-    },
-    { 
-      name: "Проект 2",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dolor, tempus sit amet leo" +
-      "vitae, consectetur suscipit urna. Vestibulum ullamcorper mauris nec ante facilisis, sed tincidunt metus" + 
-      "dignissim.",
-      client: "Джон Сміт",
-      status:  "Розробка",
-      files: [{
-        name:  "filePath"
-      }],
-      executors: [{
-        name: "Денис Шевченко"
-      }]
-    },
-    { 
-      name: "Проект 2",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dolor, tempus sit amet leo" +
-      "vitae, consectetur suscipit urna. Vestibulum ullamcorper mauris nec ante facilisis, sed tincidunt metus" + 
-      "dignissim.",
-      client: "Джон Сміт",
-      status:  "Розробка",
-      files: [{
-        name:  "filePath"
-      }],
-      executors: [{
-        name: "Денис Шевченко"
-      }]
-    },
+    }, 
     {
-      name: "Проект 1",
+      name: "Проект 2",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dolor, tempus sit amet leo" +
       "vitae, consectetur suscipit urna. Vestibulum ullamcorper mauris nec ante facilisis, sed tincidunt metus" + 
       "dignissim. Maecenas imperdiet orci sit amet tellus congue, ullamcorper rutrum nibh dignissim. Integer tempor" + 
       "dignissim sodales. Sed accumsan, est nec varius feugiat, sem purus elementum massa, accumsan vehicula eros" +
       " diam at lorem",
-      client: "Іван Іванов",
+      deadline: new Date(2017, 7, 25),
+      client: "Іван Ковальов",
       status:  "Розробка",
       files: [{
         name:  "filePath"
       }],
-      executors: [{
-        name: "Вася Пупкін"
+      sprints: [{
+        name: "Cпринт 1",
+        description: "Реалізація початкового функціоналу",
+        goal: "Розробити каркас веб-додатку",
+        storyPoints: 90,
+        beginDate: new Date(2016, 6, 15),
+        endDate: new Date(2015, 7, 15),
+        participants: [{
+            name: "Іванов Іван",
+            role: "Розробник"
+          },
+          {
+            name: "Пяточкін Дмитро",
+            role: "Бізнес-аналітик"
+          },
+          {
+            name: "Савкін Дмитро",
+            role: "Розробник"
+          }
+        ],
+        tasks: [{
+          name: "Проектування сутності користувача",
+          description: "Проектування сутності користувача у базі даних",
+          creator: "Олександр Балан",
+          asignee: "Савкін Дмитро",
+          storyPoint: 2,
+          status: "active",
+          priority: "high",
+          implementationTime: "1d 6h"
+        },{
+          name: "Проектування сутності для звіту",
+          description: "Проектування сутності для звіту у базі даних",
+          creator: "Олександр Балан",
+          asignee: "Іванов Іван",
+          storyPoint: 2,
+          status: "active",
+          priority: "high",
+          implementationTime: "2d 6h"
+        }]
+      }]
+    },
+    {
+      name: "Проект 3",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sapien dolor, tempus sit amet leo" +
+      "vitae, consectetur suscipit urna. Vestibulum ullamcorper mauris nec ante facilisis, sed tincidunt metus" + 
+      "dignissim. Maecenas imperdiet orci sit amet tellus congue, ullamcorper rutrum nibh dignissim. Integer tempor" + 
+      "dignissim sodales. Sed accumsan, est nec varius feugiat, sem purus elementum massa, accumsan vehicula eros" +
+      " diam at lorem",
+      deadline: new Date(2017, 7, 25),
+      client: "Іван Ковальов",
+      status:  "Розробка",
+      files: [{
+        name:  "filePath"
+      }],
+      sprints: [{
+        name: "Cпринт 1",
+        description: "Реалізація початкового функціоналу",
+        goal: "Розробити каркас веб-додатку",
+        storyPoints: 90,
+        beginDate: new Date(2016, 5, 15),
+        endDate: new Date(2015, 6, 15),
+        participants: [{
+            name: "Іванов Іван",
+            role: "Розробник"
+          },
+          {
+            name: "Пяточкін Дмитро",
+            role: "Бізнес-аналітик"
+          },
+          {
+            name: "Савкін Дмитро",
+            role: "Розробник"
+          }
+        ],
+        tasks: [{
+          name: "Авторизація через Google",
+          description: "Розробка авторизації через Google",
+          creator: "Олександр Балан",
+          asignee: "Савкін Дмитро",
+          storyPoint: 2,
+          status: "active",
+          priority: "high",
+          implementationTime: "2d 6h"
+        },{
+          name: "Авторизація через Facebook",
+          description: "Розробка авторизації через Facebook",
+          creator: "Олександр Балан",
+          asignee: "Іванов Іван",
+          storyPoint: 2,
+          status: "active",
+          priority: "high",
+          implementationTime: "2d 6h"
+        }]
       }]
     })
     .then(() => {
       console.log('finished creating projects');
     });
   });
-
-Task.find({}).remove()
-  .then(() => {
-    Task.create({
-      _id: mongoose.mongo.ObjectId('56cb91bdc3464f14678934ca'),
-      name: "Task 1",
-      description: "Description",
-      creator: "Creator",
-      priority: "High"
-    },
-    {
-      _id: mongoose.mongo.ObjectId('56cb91bdc3464f14678934cb'),
-      name: "Task 1",
-      name: "Task 2",
-      description: "Description",
-      creator: "Creator",
-      priority: "High"
-    },
-    {
-      _id: mongoose.mongo.ObjectId('56cb91bdc3464f14678934cc'),
-      name: "Task 1",
-      name: "Task 2",
-      description: "Description",
-      creator: "Creator",
-      priority: "High"
-    },
-    {
-      _id: mongoose.mongo.ObjectId('56cb91bdc3464f14678934cd'),
-      name: "Task 4",
-      description: "Description",
-      creator: "Creator",
-      priority: "High"
-    })
-    .then(() => {
-      console.log('finished populating users');
-    });
-  });
-
-Sprint.find({}).remove()
-  .then(() => {
-    Sprint.create({
-      _id: "16cb91bdc3464f14678934ca",
-      name: "Sprint 1",
-      description: "Description",
-      goal: "Implement the first part of functionality",
-      storyPoints: 120,
-      endDate: new Date(2017, 4, 12, 0, 0, 0),
-      participants: [{
-        id: "1",
-        name: "Vasiliy Pupkin",
-        role: "Developer"
-      }],
-      tasks: [{
-        id: "56cb91bdc3464f14678934ca"
-      },
-      {
-        id: "56cb91bdc3464f14678934cb"
-      }],
-      active: true
-    },
-    {
-      _id: "16cb91bdc3464f14678934cb",
-      name: "Sprint 1",
-      description: "Description",
-      goal: "Implement the first part of functionality",
-      storyPoints: 120,
-      endDate: new Date(2017, 4, 12, 0, 0, 0),
-      participants: [{
-        id: "1",
-        name: "Vasiliy Pupkin",
-        role: "Developer"
-      }],
-      tasks: [{
-        id: "56cb91bdc3464f14678934ca"
-      },
-      {
-        id: "56cb91bdc3464f14678934cb"
-      }],
-      active: true
-    })
-    .then(() => {
-      console.log('finished populating users');
-    });
-  });   

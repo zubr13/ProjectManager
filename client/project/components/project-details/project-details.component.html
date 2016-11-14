@@ -11,6 +11,6 @@
 		<h4 class="executors">Розробники: </h4>
 		<div ng-repeat="executor in $ctrl.project.executors"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>: {{executor.name}}</p>
 		</div>
-		<sprints-list></sprints-list>
+		<sprints-list sprints="$ctrl.project.sprints"></sprints-list>
 	</div>
 </div>
