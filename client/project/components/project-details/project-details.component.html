@@ -1,15 +1,14 @@
 <div class="project-container">
 	<div class="project-detail-card">
-		<h3>{{$ctrl.project.name}}</h3>
-		<h4>Опис: <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></h4>
-		<p class="description"> {{$ctrl.project.description}}</p>
-		<h4>Дедлайн: <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></h4>
-		<span class="highlight">{{$ctrl.project.deadline}}</span>
-		<h4 class="client">Клієнт: <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  {{$ctrl.project.client}}</h4>
-		<h4>Статус: </h4>
-		<span class="highlight">{{$ctrl.project.status}}</span>
-		<h4 class="executors">Розробники: </h4>
-		<div ng-repeat="executor in $ctrl.project.executors"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>: {{executor.name}}</p>
+		<div class="project-details">
+			<h3>{{$ctrl.project.name}}</h3>
+			<h4>Опис: <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></h4>
+			<p class="description"> {{$ctrl.project.description}}</p>
+			<h4>Дедлайн: <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></h4>
+			<span class="highlight">{{$ctrl.project.deadline}}</span>
+			<h4 class="client">Клієнт: <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  {{$ctrl.project.client}}</h4>
+			<h4>Статус: </h4>
+			<span class="highlight">{{$ctrl.project.status}}</span>
 		</div>
 		<sprints-list sprints="$ctrl.project.sprints"></sprints-list>
 	</div>

@@ -11,4 +11,11 @@
 .project-container{
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.project-details{
+	margin: 20px;
+	padding: 10px;
 }

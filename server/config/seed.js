@@ -115,6 +115,47 @@ User.find({}).remove()
           priority: "Високий",
           implementationTime: "2d 6h"
         }]
+      },
+      {
+        name: "Cпринт 2",
+        description: "Реалізація початкового функціоналу",
+        goal: "Розробити каркас веб-додатку",
+        storyPoints: 90,
+        beginDate: new Date(2016, 5, 15),
+        endDate: new Date(2015, 6, 15),
+        active: true,
+        participants: [{
+            name: "Іванов Іван",
+            role: "Розробник"
+          },
+          {
+            name: "Пяточкін Дмитро",
+            role: "Бізнес-аналітик"
+          },
+          {
+            name: "Савкін Дмитро",
+            role: "Розробник"
+          }
+        ],
+        tasks: [{
+          name: "Розробка архітектури ядра",
+          description: "Розробка архітектури основної частини веб-додатку",
+          creator: "Олександр Балан",
+          asignee: "Савкін Дмитро",
+          storyPoint: 2,
+          status: "Активний",
+          priority: "high",
+          implementationTime: "2d 6h"
+        },{
+          name: "Розробка модулю для генерації звіту",
+          description: "Розробка модулю, що буде генерувати звіт по продажу для користувача",
+          creator: "Олександр Балан",
+          asignee: "Іванов Іван",
+          storyPoint: 2,
+          status: "Активний",
+          priority: "Високий",
+          implementationTime: "2d 6h"
+        }]
       }]
     }, 
     {

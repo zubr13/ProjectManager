@@ -1,37 +1,21 @@
-<h3>Спрінти: </h3>
-<div ng-repeat="sprint in $ctrl.sprints">
-	<h4>Назва спрінту: </h4>
-	<div>{{sprint.name}}</div>
-	<h4>Опис спрінту</h4>
-	<div>{{sprint.description}}</div>
-	<h4>Мета спрінту: </h4>
-	<div>{{sprint.goal}}</div>
-	<h4>Дата початку: </h4>
-	<div>{{sprint.beginDate}}</div>
-	<h4>Дата завершення: </h4>
-	<div>{{sprint.endDate}}</div>
-	<h4>Учасники спринту: </h4>
-	<div ng-repeat="participant in sprint.participants">
-		<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span>{{participant.name}}</span>
-		<div>{{participant.role}}</div>
-	</div>
-	<h3>Задачі: </h3>
-	<div ng-repeat="task in sprint.tasks">
-		<h4>Назва задачі</h4>
-		<span>{{task.name}}</span>
-		<h4>Опис задачі</h4>
-		<span>{{task.description}}</span>
-		<h4>Створив: </h4>
-		<div>{{task.creator}}</div>
-		<h4>Виконавець: </h4>
-		<div>{{task.asignee}}</div>
-		<h4>Оцінка: </h4>
-		<div>{{task.storyPoint}}</div>
-		<h4>Статус: </h4>
-        <div>{{task.status}}</div>
-        <h4>Пріорітет: </h4>
-        <div>{{task.priority}}</div>
-        <h4>Час виконання: </h4>
-        <div>{{task.implementationTime}}</div>
+<div class="sprints-list">
+	<h3>Спрінти: </h3>
+	<div class="sprint-item" ng-repeat="sprint in $ctrl.sprints">
+		<h4>Назва спрінту: </h4>
+		<div class="sprint-title"><strong>{{sprint.name}}</strong></div>
+		<h4> <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Опис спрінту: </h4>
+		<div>{{sprint.description}}{{sprint.description}}{{sprint.description}}{{sprint.description}}</div>
+		<h4><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Мета спрінту: </h4>
+		<div>{{sprint.goal}}</div>
+		<h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Дата початку: </h4>
+		<div>{{sprint.beginDate}}</div>
+		<h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Дата завершення: </h4>
+		<div>{{sprint.endDate}}</div>
+		<h4>Учасники спринту: </h4>
+		<div class="participants-list" ng-repeat="participant in sprint.participants">
+			<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span>{{participant.name}}</span>
+			<div>{{participant.role}}</div>
+		</div>
+		<tasks-list tasks="sprint.tasks"></tasks-list>
 	</div>
 </div>

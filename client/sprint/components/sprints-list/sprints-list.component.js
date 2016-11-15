@@ -1,5 +1,6 @@
 'use strict';
 const angular = require('angular');
+import tasksList from '../tasks-list/tasks-list.component';
 
 export class sprintsListComponent {
   /*@ngInject*/
@@ -8,7 +9,7 @@ export class sprintsListComponent {
   }
 }
 
-export default angular.module('projectManagerApp.sprints-list', [])
+export default angular.module('projectManagerApp.sprints-list', [tasksList])
   .component('sprintsList', {
     template: require('./sprints-list.component.html'),
     bindings: { sprints: "<"},

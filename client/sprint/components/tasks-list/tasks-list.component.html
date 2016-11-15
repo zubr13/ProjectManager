@@ -1,0 +1,24 @@
+<div class="tasks-list">
+	<h3>Задачі: </h3>
+	<div class="task-item" ng-repeat="task in $ctrl.tasks">
+		<h4><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Назва задачі</h4>
+		<div class="task-title"><strong>{{task.name}}</strong></div>
+		<button ng-click="$ctrl.toggleDetails()" class="btn btn-default">Деталі</button>
+		<div ng-if="$ctrl.isDetailsVisible">
+			<h4><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Опис задачі</h4>
+			<span>{{task.description}}</span>
+			<h4>Створив: </h4>
+			<div><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{task.creator}}</div>
+			<h4>Виконавець: </h4>
+			<div><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{task.asignee}}</div>
+			<h4><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Оцінка: </h4>
+			<div>{{task.storyPoint}}</div>
+			<h4>Статус: </h4>
+		    <div>{{task.status}}</div>
+		    <h4>Пріорітет: </h4>
+		    <div>{{task.priority}}</div>
+		    <h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Час виконання: </h4>
+		    <div>{{task.implementationTime}}</div>
+	    </div>
+	</div>
+<div>
