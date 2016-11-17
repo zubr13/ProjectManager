@@ -1,11 +1,11 @@
 'use strict';
 const angular = require('angular');
+import createTaskForm from '../create-task-form/create-task-form.component';
 
 export class tasksListComponent {
   /*@ngInject*/
-  constructor(ProjectsService) {
+  constructor() {
     this.isDetailsVisible = [];
-    this.ProjectsService = ProjectsService;
   }
 
   fillDetailsVisible(){
@@ -21,13 +21,9 @@ export class tasksListComponent {
   isDetailVisible(index){
     return this.isDetailsVisible[index];
   }
-
-  addTask(){
-    this.ProjectsService.addTask(this.sprintId, this.currentTask);
-  }
 }
 
-export default angular.module('projectManagerApp.tasks-list', [])
+export default angular.module('projectManagerApp.tasks-list', [createTaskForm])
   .component('tasksList', {
     template: require('./tasks-list.component.html'),
     bindings: { tasks: '<', sprintId: "<" },
