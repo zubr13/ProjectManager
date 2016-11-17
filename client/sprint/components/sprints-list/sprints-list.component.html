@@ -1,5 +1,6 @@
 <div class="sprints-list">
 	<h3>Спрінти: </h3>
+	<create-sprint-form sprints="$ctrl.sprints"></create-sprint-form>
 	<div class="sprint-item" ng-repeat="sprint in $ctrl.sprints">
 		<h4>Назва спрінту: </h4>
 		<div class="sprint-title"><strong>{{sprint.name}}</strong></div>

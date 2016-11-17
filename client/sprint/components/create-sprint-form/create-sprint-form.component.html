@@ -1,0 +1,55 @@
+<button ng-show="!$ctrl.addSprintMode" class="btn btn-success" ng-click="$ctrl.addSprintMode=true">Створити спрінт</button>
+<form ng-show="$ctrl.addSprintMode" action="" class="form-horizontal create-sprint-form">
+	<div class="form-group">
+	    <label for="sprintName" class="col-sm-2 control-label">Назва спрінту</label>
+	    <div class="col-sm-4">
+	      <input type="text" ng-model="$ctrl.currentSprint.name" class="form-control" id="sprintName" placeholder="Назва спрінту">
+	    </div>
+	    <div class="col-sm-6"></div>
+ 	</div>
+
+ 	<div class="form-group">
+	    <label for="description" class="col-sm-2 control-label">Опис спрінту</label>
+	    <div class="col-sm-4">
+	      <textarea ng-model="$ctrl.currentSprint.description" class="form-control" rows="5" id="description"></textarea>
+	    </div>
+	    <div class="col-sm-6"></div>
+ 	</div>
+
+ 	<div class="form-group">
+	    <label for="sprint-goal" class="col-sm-2 control-label">Мета спрінту</label>
+	    <div class="col-sm-4">
+	      <textarea ng-model="$ctrl.currentSprint.goal" class="form-control" rows="5" id="sprint-goal"></textarea>
+	    </div>
+	    <div class="col-sm-6"></div>
+ 	</div>
+
+ 	<div class="form-group">
+	    <label for="beginDate" class="col-sm-2 control-label">Дата початку</label>
+	    <div class="col-sm-4">
+	      <input type="date" ng-model="$ctrl.currentSprint.beginDate" class="form-control" id="beginDate">
+	    </div>
+	    <div class="col-sm-6"></div>
+ 	</div>
+
+ 	<div class="form-group">
+	    <label for="endDate" class="col-sm-2 control-label">Дата завершення</label>
+	    <div class="col-sm-4">
+	      <input type="date" ng-model="$ctrl.currentSprint.endDate" class="form-control" id="endDate">
+	    </div>
+	    <div class="col-sm-6"></div>
+ 	</div>
+
+	 <div class="form-group">
+	    <label class="col-sm-2 control-label">Виконавці</label>
+	    <div class="col-sm-4">
+	    	<span class="executor-name" ng-repeat = "participant in $ctrl.currentSprint.participants">{{participant.name}}</span>
+	    	<input ng-model="$ctrl.executor" ng-if="$ctrl.addExecutorMode" type='text'/>
+	    	<a href="" ng-click="$ctrl.addExecutor(); $ctrl.addExecutorMode = !$ctrl.addExecutorMode">
+	    		<span class="addExecutorButton glyphicon glyphicon-plus"></span>
+	    	</a>
+	    </div>
+	    <div class="col-sm-6"></div>
+ 	</div>
+</form>
+<button class="save-sprint-button btn btn-success" ng-show="$ctrl.addSprintMode" ng-click="$ctrl.addSprint()">Зберегти</button>

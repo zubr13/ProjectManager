@@ -5,7 +5,15 @@ import sprintsList from '../../../sprint/components/sprints-list/sprints-list.co
 
 export class projectDetailsComponent {
   /*@ngInject*/
-  constructor() {
+  constructor(ProjectService, $stateParams, $state) {
+  	this.ProjectService = ProjectService;
+  	this.$stateParams = $stateParams;
+  	this.$state = $state;
+  }
+
+  deleteProject(){
+  	this.ProjectService.deleteProject(this.$stateParams.id);
+  	this.$state.go('projects');
   }
 }
 

@@ -108,6 +108,29 @@ export function patch(req, res) {
     .catch(handleError(res));
 }
 
+export function addSprint(req, res) {
+  if(req.body._id) {
+    delete req.body._id;
+  }
+  return Project.findOneAndUpdate({_id: req.params.id}, {$push: { sprints: req.body }}, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+export function addTask(req, res) {
+  if(req.body._id) {
+    delete req.body._id;
+  }
+  Project.update({
+    "sprints._id": req.params.id
+  },
+  { "$push": { "sprints.$.tasks": req.body } },
+  {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+  .then(respondWithResult(res))
+  .catch(handleError(res));
+}
+
 // Deletes a Project from the DB
 export function destroy(req, res) {
   return Project.findById(req.params.id).exec()

@@ -11,5 +11,7 @@ router.post('/', controller.create);
 router.put('/:id', controller.upsert);
 router.patch('/:id', controller.patch);
 router.delete('/:id', controller.destroy);
+router.put('/:id/addsprint', controller.addSprint);
+router.put('/:id/addtask', controller.addTask);
 
 module.exports = router;

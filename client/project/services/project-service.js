@@ -21,4 +21,12 @@ export default class ProjectService{
 	deleteProject(id){
 		return this.$http.delete(`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/${id}`)
 	}
+
+	addSprint(id, sprint){
+     	return this.$http.put(`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/${id}/addsprint`, sprint).then(response => response.data);
+	}
+
+	addTask(id, task){
+		return this.$http.put(`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/${id}/addtask`, task).then(response => response.data);
+	}
 }

@@ -51,25 +51,6 @@
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div> -->
-
- 	<div class="form-group">
-	    <label for="attachFile" class="col-sm-2 control-label" ng-click="createCtrl.createProject()">Виконавці</label>
-	    <div class="col-sm-4">
-	    	<span class="executor-name" ng-repeat = "executor in createCtrl.currentProject.executors">{{executor.name}}</span>
-	    	<input ng-model="createCtrl.executor" ng-if="createCtrl.addExecutorMode" type='text'/>
-	    	<a href="" ng-click="createCtrl.addExecutor(); createCtrl.addExecutorMode = !createCtrl.addExecutorMode">
-	    		<span class="addExecutorButton glyphicon glyphicon-plus"></span>
-	    	</a>
-	    </div>
-	    <div class="col-sm-6"></div>
- 	</div>
-
- 	<div class="form-group">
- 		<div class="col-sm-5"></div>
-	    <div class="col-sm-3">
-	    	 <button class="btn btn-success" ng-click="createCtrl.createProject()">Створити</button>
-	    </div>
-	    <div class="col-sm-4"></div>
- 	</div>
-
 </form>
+
+ <div class="col-sm-2"></div><button class="btn btn-success" ng-click="createCtrl.createProject()">Створити</button>
