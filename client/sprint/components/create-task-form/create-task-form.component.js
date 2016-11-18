@@ -5,12 +5,15 @@ export class createTaskFormComponent {
   /*@ngInject*/
   constructor(projectService) {
     this.addTaskMode = false;
-    this.currentTask = {};
+    this.currentTask = {priority: "Низький", status: "Відкрита", storyPoint: 1};
     this.projectService = projectService;
   }
 
   addTask(){
-    //this.projectService.addTask(sprintId, this.currentTask);
+    this.addTaskMode = false;
+    this.tasks.push(this.currentTask);
+    this.projectService.addTask(this.sprintId, this.currentTask);
+    this.currentTask = {};
   }
 }
 

@@ -1,55 +1,79 @@
-<button ng-show="!$ctrl.addSprintMode" class="btn btn-success" ng-click="$ctrl.addSprintMode=true">Створити задачу</button>
+<button ng-show="!$ctrl.addTaskMode" class="btn btn-success" ng-click="$ctrl.addTaskMode=true">Додати задачу</button>
 <form ng-show="$ctrl.addTaskMode" action="" class="form-horizontal create-sprint-form">
 	<div class="form-group">
-	    <label for="sprintName" class="col-sm-2 control-label">Назва спрінту</label>
+	    <label for="taskName" class="col-sm-2 control-label">Назва задачі</label>
 	    <div class="col-sm-4">
-	      <input type="text" ng-model="$ctrl.currentSprint.name" class="form-control" id="sprintName" placeholder="Назва спрінту">
+	      <input type="text" ng-model="$ctrl.currentTask.name" class="form-control" id="taskName" placeholder="Назва задачі">
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
 
  	<div class="form-group">
-	    <label for="description" class="col-sm-2 control-label">Опис спрінту</label>
+	    <label for="description" class="col-sm-2 control-label">Опис задачі</label>
 	    <div class="col-sm-4">
-	      <textarea ng-model="$ctrl.currentSprint.description" class="form-control" rows="5" id="description"></textarea>
+	      <textarea ng-model="$ctrl.currentTask.description" class="form-control" rows="5" id="description"></textarea>
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
 
  	<div class="form-group">
-	    <label for="sprint-goal" class="col-sm-2 control-label">Мета спрінту</label>
+	    <label for="taskCreator" class="col-sm-2 control-label">Створив: </label>
 	    <div class="col-sm-4">
-	      <textarea ng-model="$ctrl.currentSprint.goal" class="form-control" rows="5" id="sprint-goal"></textarea>
+	      <input type="text" ng-model="$ctrl.currentTask.creator" class="form-control" id="taskCreator">
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
 
  	<div class="form-group">
-	    <label for="beginDate" class="col-sm-2 control-label">Дата початку</label>
+	    <label for="taskExecutor" class="col-sm-2 control-label">Виконавець: </label>
 	    <div class="col-sm-4">
-	      <input type="date" ng-model="$ctrl.currentSprint.beginDate" class="form-control" id="beginDate">
+	      <input type="text" ng-model="$ctrl.currentTask.asignee" class="form-control" id="taskExecutor">
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
 
  	<div class="form-group">
-	    <label for="endDate" class="col-sm-2 control-label">Дата завершення</label>
+	    <label for="taskStoryPoints" class="col-sm-2 control-label">Сторі пойнти: </label>
 	    <div class="col-sm-4">
-	      <input type="date" ng-model="$ctrl.currentSprint.endDate" class="form-control" id="endDate">
+	      <input type="number" min="1" max="30" ng-model="$ctrl.currentTask.storyPoint" class="form-control" id="taskStoryPoints">
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
 
-	 <div class="form-group">
-	    <label class="col-sm-2 control-label">Виконавці</label>
+ 	<div class="form-group">
+	    <label for="taskStatus" class="col-sm-2 control-label">Статус: </label>
 	    <div class="col-sm-4">
-	    	<span class="executor-name" ng-repeat = "participant in $ctrl.currentSprint.participants">{{participant.name}}</span>
-	    	<input ng-model="$ctrl.executor" ng-if="$ctrl.addExecutorMode" type='text'/>
-	    	<a href="" ng-click="$ctrl.addExecutor(); $ctrl.addExecutorMode = !$ctrl.addExecutorMode">
-	    		<span class="addExecutorButton glyphicon glyphicon-plus"></span>
-	    	</a>
+	      <select class="form-control" id="taskStatus" ng-model="$ctrl.currentTask.status">
+			  <option>Відкрита</option>
+			  <option>В прогресі</option>
+			  <option>Виконана</option>
+			</select>
 	    </div>
 	    <div class="col-sm-6"></div>
  	</div>
+
+ 	<div class="form-group">
+	    <label for="taskPriority" class="col-sm-2 control-label">Пріорітет: </label>
+	    <div class="col-sm-4">
+	      <select class="form-control" id="taskPriority" ng-model="$ctrl.currentTask.priority">
+	      	  <option>Дуже низький</option>
+			  <option>Низький</option>
+			  <option>Середній</option>
+			  <option>Високий</option>
+			  <option>Надзвичайний</option>
+			</select>
+	    </div>
+	    <div class="col-sm-6"></div>
+ 	</div>
+
+ 	<div class="form-group">
+	    <label for="implemetationTime" class="col-sm-2 control-label">Час виконання: </label>
+	    <div class="col-sm-4">
+	      <input type="text" ng-model="$ctrl.currentTask.implementationTime" class="form-control" id="implementationTime" placeholder="к-ть (днів, годин, хвилин)">
+	    </div>
+	    <div class="col-sm-6"></div>
+ 	</div>
+
+
 </form>
-<button class="save-sprint-button btn btn-success" ng-show="$ctrl.addSprintMode" ng-click="$ctrl.addSprint()">Зберегти</button>
+<button class="save-sprint-button btn btn-success" ng-show="$ctrl.addTaskMode" ng-click="$ctrl.addTask()">Зберегти</button>
