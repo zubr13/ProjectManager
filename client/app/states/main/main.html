@@ -1,5 +1,6 @@
 <div class="container">
 	<button  ui-sref="create" class="btn btn-success">Створити новий проект</button>
-	<h1>Hello</h1>
-	<activity></activity>
+	<div ng-repeat="notification in $ctrl.notifications">
+		<notification notification="notification"></notification>
+	</div>
 </div>

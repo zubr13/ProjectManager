@@ -276,19 +276,17 @@ Notification.find({}).remove()
   .then(() => {
     Notification.create({
       text: "Додав задачу 'Створити сервіс обслуговування клієнта до спринту 1'",
-      date: {type: Date, default: Date.now},
       creator: "Ковальов Дмитро",
       creatorAvatar: "developer1.jpg",
       creatorUrl: ""
     },
     {
       text: "Сторив спрінт під назвою 'Спрінт 2'",
-      date: {type: Date, default: Date.now},
       creator: "Шевченко Сергій",
       creatorAvatar: "developer2.jpg",
       creatorUrl: ""
     })
     .then(() => {
-      console.log('finished populating users');
+      console.log('finished populating notifications');
     });
   });
