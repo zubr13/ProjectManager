@@ -8,6 +8,7 @@
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Project from '../api/project/project.model';
+import Notification from '../api/notification/notification.model';
 
 Thing.find({}).remove()
   .then(() => {
@@ -268,5 +269,26 @@ User.find({}).remove()
     })
     .then(() => {
       console.log('finished creating projects');
+    });
+  });
+
+Notification.find({}).remove()
+  .then(() => {
+    Notification.create({
+      text: "Додав задачу 'Створити сервіс обслуговування клієнта до спринту 1'",
+      date: {type: Date, default: Date.now},
+      creator: "Ковальов Дмитро",
+      creatorAvatar: "developer1.jpg",
+      creatorUrl: ""
+    },
+    {
+      text: "Сторив спрінт під назвою 'Спрінт 2'",
+      date: {type: Date, default: Date.now},
+      creator: "Шевченко Сергій",
+      creatorAvatar: "developer2.jpg",
+      creatorUrl: ""
+    })
+    .then(() => {
+      console.log('finished populating users');
     });
   });

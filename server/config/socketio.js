@@ -16,6 +16,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/notification/notification.socket').register(socket);
   require('../api/task/task.socket').register(socket);
   require('../api/sprint/sprint.socket').register(socket);
   require('../api/project/project.socket').register(socket);
