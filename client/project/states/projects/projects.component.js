@@ -3,8 +3,7 @@ const angular = require('angular');
 
 const uiRouter = require('angular-ui-router');
 
-import routes from './projects.routes';
-
+import routes from './projects.routes'
 import ProjectService from '../../services/project-service';
 
 export class ProjectsComponent {

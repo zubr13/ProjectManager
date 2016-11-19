@@ -23,7 +23,7 @@ export class CreateComponent {
     });
     const currentUser = this.Auth.getCurrentUserSync();
     const notification = {
-      text: `Створив проект під назвою '${this.currentProject.title}' зі статусом '${this.currentProject.status}'`,
+      text: `Створив проект під назвою '${this.currentProject.name}' зі статусом '${this.currentProject.status}'`,
       creator: currentUser.name,
       creatorAvatar: currentUser.avatar,
       creatorUrl: currentUser._id

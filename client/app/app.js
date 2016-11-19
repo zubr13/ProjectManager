@@ -38,7 +38,7 @@ angular.module('projectManagerApp', [ngCookies, ngResource, ngSanitize, 'btford.
 
     $rootScope.$on('$stateChangeStart', function(event, next) {
       Auth.isLoggedIn(function(loggedIn) {
-        if(next.authenticate && !loggedIn) {
+        if(!loggedIn) {
           $location.path('/login');
         }
       });

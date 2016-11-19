@@ -26,7 +26,6 @@ export class createSprintFormComponent {
     this.sprints.push(this.currentSprint);
     this.projectService.addSprint(this.$stateParams.id, this.currentSprint);
     const currentUser = this.Auth.getCurrentUserSync();
-    console.log(this.project);
     const notification = {
       text: `Створив спрінт під назвою '${this.currentSprint.name}' у проекті '${this.project.name}' з метою: '${this.currentSprint.goal}'`,
       creator: currentUser.name,

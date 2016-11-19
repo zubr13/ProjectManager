@@ -5,13 +5,23 @@ import sprintsList from '../../../sprint/components/sprints-list/sprints-list.co
 
 export class projectDetailsComponent {
   /*@ngInject*/
-  constructor(ProjectService, $stateParams, $state) {
+  constructor(ProjectService, $stateParams, $state, Auth, notificationService) {
+    this.Auth = Auth;
+    this.notificationService = notificationService;
   	this.ProjectService = ProjectService;
   	this.$stateParams = $stateParams;
   	this.$state = $state;
   }
 
   deleteProject(){
+    const currentUser = this.Auth.getCurrentUserSync();
+    const notification = {
+      text: `Видалив проект під назвою '${this.project.name}'`,
+      creator: currentUser.name,
+      creatorAvatar: currentUser.avatar,
+      creatorUrl: currentUser._id
+    }
+    this.notificationService.createNotification(notification);
   	this.ProjectService.deleteProject(this.$stateParams.id);
   	this.$state.go('projects');
   }
