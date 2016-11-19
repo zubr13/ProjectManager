@@ -147,9 +147,16 @@ export function deleteSprint(req, res) {
 }
 
 export function deleteTask(req, res) {
-  console.log(req.params.id);
 
   return Project.update({"sprints.tasks._id": req.params.id},  {$pull: {"sprints.$.tasks": {"_id": req.params.id} }}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+export function addMember(req, res) {
+
+  return Project.findOneAndUpdate({_id: req.params.id}, {$push: {"members": req.body}},
+   {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

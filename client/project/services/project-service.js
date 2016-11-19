@@ -45,4 +45,10 @@ export default class ProjectService{
 		return this.$http.delete(
 			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/task/${id}`);
 	}
+
+	addMember(id, email){
+		return this.$http.put(
+			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/members/${id}`,
+			{"email": email});
+	}
 }
