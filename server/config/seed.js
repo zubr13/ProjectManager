@@ -53,6 +53,7 @@ User.find({}).remove()
       provider: 'local',
       role: 'admin',
       name: 'Admin',
+      avatar: 'http://findicons.com/files/icons/2526/bloggers/256/admin.png',
       email: 'admin@example.com',
       password: 'admin'
     })

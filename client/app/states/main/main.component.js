@@ -4,6 +4,7 @@ import routing from './main.routes';
 import createState from '../../../project/states/create/create.component';
 import notificationService from './notification/notification-service';
 import notificationComponent from './notification/notification.component';
+import profileState from '../../../profile/profile.component';
 
 export class MainController {
 
@@ -21,7 +22,8 @@ export class MainController {
   }
 }
 
-export default angular.module('projectManagerApp.main', [uiRouter, createState, notificationComponent])
+export default angular.module('projectManagerApp.main', [uiRouter, createState, notificationComponent,
+	profileState])
   .config(routing)
   .component('main', {
     template: require('./main.html'),

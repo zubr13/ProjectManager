@@ -8,7 +8,8 @@ export function setup(User, config) {
     callbackURL: config.facebook.callbackURL,
     profileFields: [
       'displayName',
-      'emails'
+      'emails',
+      'photos'
     ]
   },
   function(accessToken, refreshToken, profile, done) {
@@ -21,6 +22,7 @@ export function setup(User, config) {
         user = new User({
           name: profile.displayName,
           email: profile.emails[0].value,
+          avatar: profile.photos[0].value,
           role: 'user',
           provider: 'facebook',
           facebook: profile._json

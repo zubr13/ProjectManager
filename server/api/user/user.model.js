@@ -34,6 +34,7 @@ var UserSchema = new Schema({
     }
   },
   provider: String,
+  avatar: String,
   salt: String,
   facebook: {},
   google: {},
