@@ -1,6 +1,6 @@
 <div class="sprints-list">
 	<h3>Спрінти: </h3>
-	<create-sprint-form sprints="$ctrl.sprints"></create-sprint-form>
+	<create-sprint-form sprints="$ctrl.sprints" project="$ctrl.project"></create-sprint-form>
 	<div class="sprint-item" ng-repeat="sprint in $ctrl.sprints">
 		<h4>Назва спрінту: </h4>
 		<div class="sprint-title"><strong>{{sprint.name}}</strong></div>
@@ -17,6 +17,6 @@
 			<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span>{{participant.name}}</span>
 			<div>{{participant.role}}</div>
 		</div>
-		<tasks-list tasks="sprint.tasks" sprint-id="sprint._id"></tasks-list>
+		<tasks-list tasks="sprint.tasks" sprint="sprint"></tasks-list>
 	</div>
 </div>

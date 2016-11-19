@@ -49,7 +49,24 @@ User.find({}).remove()
       name: 'Test User',
       email: 'test@example.com',
       password: 'test'
-    }, {
+    },
+    {
+      _id: mongoose.Types.ObjectId('4edd40c86762e0fb12000003'),
+      provider: 'local',
+      name: 'Шевченко Сергій',
+      email: 's.shevchenko@example.com',
+      avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+      password: 'test'
+    },
+    {
+      _id: mongoose.Types.ObjectId('4edd40c86762e0fb12000004'),
+      provider: 'local',
+      name: 'Ковальов Дмитро',
+      avatar: 'http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg',
+      email: 'd.kovalyov@example.com',
+      password: 'test'
+    },
+     {
       provider: 'local',
       role: 'admin',
       name: 'Admin',
@@ -278,14 +295,14 @@ Notification.find({}).remove()
     Notification.create({
       text: "Додав задачу 'Створити сервіс обслуговування клієнта до спринту 1'",
       creator: "Ковальов Дмитро",
-      creatorAvatar: "developer1.jpg",
-      creatorUrl: ""
+      creatorAvatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+      creatorUrl: "4edd40c86762e0fb12000004"
     },
     {
       text: "Сторив спрінт під назвою 'Спрінт 2'",
       creator: "Шевченко Сергій",
-      creatorAvatar: "developer2.jpg",
-      creatorUrl: ""
+      creatorAvatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+      creatorUrl: "4edd40c86762e0fb12000003"
     })
     .then(() => {
       console.log('finished populating notifications');

@@ -12,7 +12,7 @@ export class sprintsListComponent {
 export default angular.module('projectManagerApp.sprints-list', [tasksList, createSprintForm])
   .component('sprintsList', {
     template: require('./sprints-list.component.html'),
-    bindings: { sprints: "<"},
+    bindings: { sprints: "<", project: "<"},
     controller: sprintsListComponent
   })
   .name;

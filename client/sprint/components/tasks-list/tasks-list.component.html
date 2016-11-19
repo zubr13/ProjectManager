@@ -1,6 +1,6 @@
 <div class="tasks-list">
 	<h3>Задачі: </h3>
-	<create-task-form tasks="$ctrl.tasks" sprint-id="$ctrl.sprintId"></create-task-form>
+	<create-task-form tasks="$ctrl.tasks" sprint="$ctrl.sprint"></create-task-form>
 	<div class="task-item" ng-repeat="task in $ctrl.tasks">
 		<h4><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Назва задачі</h4>
 		<div class="task-title"><strong>{{task.name}}</strong></div>

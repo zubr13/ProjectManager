@@ -1,6 +1,6 @@
-<div>
+<div class="profile-page">
 	<h1>{{profileCtrl.user.name}}</h1>
-	<img height="ng-src="{{profileCtrl.user.avatar}}" alt="">
-	<div>{{profileCtrl.user.email}}</div>
-	<div>{{profileCtrl.user.role}}</div>
+	<img class="profile-avatar" height="200" ng-src="{{profileCtrl.user.avatar}}" alt="">
+	<div><strong>Email: </strong>{{profileCtrl.user.email}}</div>
+	<div class="role-block"><strong>Роль: </strong>{{profileCtrl.user.role}}</div>
 </div>

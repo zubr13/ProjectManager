@@ -10,7 +10,7 @@
 			<h4>Статус: </h4>
 			<span class="highlight">{{$ctrl.project.status}}</span>
 		</div>
-		<sprints-list sprints="$ctrl.project.sprints"></sprints-list>
+		<sprints-list sprints="$ctrl.project.sprints" project="$ctrl.project"></sprints-list>
 		<button class="btn btn-danger delete-button" ng-click="$ctrl.deleteProject()">Видалити проект</button>
 	</div>
 </div>

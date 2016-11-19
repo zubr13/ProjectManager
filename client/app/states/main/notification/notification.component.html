@@ -1,7 +1,8 @@
 <div class="notification-block">
-	<div class="notification-creator">
-		<img ng-src="/assets/images/{{$ctrl.notification.creatorAvatar}}" height="50" alt="">
+	<div class="notification-creator" ui-sref="profile({id: $ctrl.notification.creatorUrl})">
+		<a href=""><img ng-src="{{$ctrl.notification.creatorAvatar}}" height="50" alt="">
 		<h4>{{$ctrl.notification.creator}}</h4>
+		</a>
 	</div>
 	{{$ctrl.notification.text}}
 	<span class="notification-date">{{$ctrl.notification.date}}</span>

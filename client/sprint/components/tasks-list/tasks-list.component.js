@@ -26,7 +26,7 @@ export class tasksListComponent {
 export default angular.module('projectManagerApp.tasks-list', [createTaskForm])
   .component('tasksList', {
     template: require('./tasks-list.component.html'),
-    bindings: { tasks: '<', sprintId: "<" },
+    bindings: { tasks: '<', sprint: "<" },
     controller: tasksListComponent
   })
   .name;
