@@ -11,6 +11,7 @@ export class projectDetailsComponent {
   	this.ProjectService = ProjectService;
   	this.$stateParams = $stateParams;
   	this.$state = $state;
+    this.statusOptions = ["Планування", "Аналіз", "Розробка", "Підтримка"];
   }
 
   deleteProject(){

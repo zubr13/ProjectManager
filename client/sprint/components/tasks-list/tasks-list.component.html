@@ -2,24 +2,25 @@
 	<h3>Задачі: </h3>
 	<create-task-form tasks="$ctrl.tasks" sprint="$ctrl.sprint"></create-task-form>
 	<div class="task-item" ng-repeat="task in $ctrl.tasks">
-		<h4><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Назва задачі</h4>
-		<div class="task-title"><strong>{{task.name}}</strong></div>
+		<h4 ><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Назва задачі</h4>
+		<div class="pointer task-title" editable-text="task.name"><strong>{{task.name}}</strong></div>
 		<button ng-click="$ctrl.toggleDetails($index)" class="btn btn-default">Деталі</button>
 		<div ng-if="$ctrl.isDetailVisible($index)">
 			<h4><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Опис задачі</h4>
-			<span>{{task.description}}</span>
+			<span class="pointer" editable-textarea="task.description" e-rows="5" e-cols="160">{{task.description}}</span>
 			<h4>Створив: </h4>
-			<div><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{task.creator}}</div>
+			<div class="pointer" editable-text="task.creator" ><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{task.creator}}</div>
 			<h4>Виконавець: </h4>
-			<div><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{task.asignee}}</div>
-			<h4><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Оцінка: </h4>
-			<div>{{task.storyPoint}}</div>
+			<div class="pointer" editable-text="task.asignee"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{task.asignee}}</div>
+			<h4><span class="glyphicon glyphicon-status" aria-hidden="true"></span> Оцінка: </h4>
+			<div class="pointer" editable-number="task.storyPoint">{{task.storyPoint}}</div>
 			<h4>Статус: </h4>
-		    <div>{{task.status}}</div>
+		    <div class="pointer" editable-text="task.status">{{task.status}}</div>
 		    <h4>Пріорітет: </h4>
-		    <div>{{task.priority}}</div>
+		    <div class="pointer" editable-text="task.priority">{{task.priority}}</div>
 		    <h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Час виконання: </h4>
-		    <div>{{task.implementationTime}}</div>
+		    <div class="pointer" editable-text="task.implementationTime">{{task.implementationTime}}</div>
+		    <hr>
 	    </div>
 	</div>
 <div>

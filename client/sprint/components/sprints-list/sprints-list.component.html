@@ -3,19 +3,21 @@
 	<create-sprint-form sprints="$ctrl.sprints" project="$ctrl.project"></create-sprint-form>
 	<div class="sprint-item" ng-repeat="sprint in $ctrl.sprints">
 		<h4>Назва спрінту: </h4>
-		<div class="sprint-title"><strong>{{sprint.name}}</strong></div>
+		<div class="pointer sprint-title" editable-text="sprint.name"><strong>{{sprint.name}}</strong></div>
 		<h4> <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Опис спрінту: </h4>
-		<div>{{sprint.description}}{{sprint.description}}{{sprint.description}}{{sprint.description}}</div>
+		<div class="pointer" editable-textarea="sprint.description" e-rows="5" e-cols="160">{{sprint.description}}</div>
 		<h4><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Мета спрінту: </h4>
-		<div>{{sprint.goal}}</div>
+		<div class="pointer" editable-textarea="sprint.goal" e-rows="5" e-cols="160">{{sprint.goal}}</div>
 		<h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Дата початку: </h4>
-		<div>{{sprint.beginDate}}</div>
+		<div class="pointer" editable-datetime-local="sprint.beginDate">{{sprint.beginDate | date: "yyyy-MM-dd, HH:mm:ss"}}</div>
 		<h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Дата завершення: </h4>
-		<div>{{sprint.endDate}}</div>
+		<div class="pointer" editable-datetime-local="sprint.endDate">{{sprint.endDate | date: "yyyy-MM-dd, HH:mm:ss"}}</div>
 		<h4>Учасники спринту: </h4>
 		<div class="participants-list" ng-repeat="participant in sprint.participants">
-			<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span>{{participant.name}}</span>
-			<div>{{participant.role}}</div>
+			<span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+			<span class="pointer" editable-text="participant.name">{{participant.name}}</span>
+			<div><strong>Спеціалізація: </strong><span class="pointer" editable-text="participant.role">{{participant.role}}</span></div>
+			<hr>
 		</div>
 		<tasks-list tasks="sprint.tasks" sprint="sprint"></tasks-list>
 	</div>

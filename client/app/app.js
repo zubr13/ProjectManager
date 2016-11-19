@@ -5,6 +5,7 @@ import angular from 'angular';
 import ngCookies from 'angular-cookies';
 import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
+import 'angular-xeditable';
 import 'angular-socket-io';
 
 import uiRouter from 'angular-ui-router';
@@ -29,13 +30,15 @@ import projectState from '../project/states/project/project.component';
 import './app.scss';
 
 angular.module('projectManagerApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io',
-    uiRouter, uiBootstrap, _Auth, account, admin, navbar, main, constants, util, projectsState, projectState
+    uiRouter, uiBootstrap, _Auth, account, admin, navbar, main, constants, util, projectsState,
+    "xeditable", projectState
   ])
   .config(routeConfig)
-  .run(function($rootScope, $location, Auth) {
+  .run(function($rootScope, $location, Auth, editableOptions) {
     'ngInject';
     // Redirect to login if route requires auth and you're not logged in
-
+    editableOptions.theme = 'bs3';
+    
     $rootScope.$on('$stateChangeStart', function(event, next) {
       Auth.isLoggedIn(function(loggedIn) {
         if(!loggedIn) {

@@ -13,10 +13,11 @@ export function setup(User, config) {
         if(user) {
           return done(null, user);
         }
-
+        
         user = new User({
           name: profile.displayName,
           email: profile.emails[0].value,
+          avatar: profile.photos[0].value,
           role: 'user',
           username: profile.emails[0].value.split('@')[0],
           provider: 'google',
