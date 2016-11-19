@@ -12,8 +12,9 @@ export class ProjectComponent {
   /*@ngInject*/
   constructor(projectService, $stateParams) {
     this.projectService = projectService;
-    this.project = {};
     this.$stateParams = $stateParams;
+    this.project = {};
+    this.members = [];
     this.getProjectById();
   }
 
@@ -21,7 +22,17 @@ export class ProjectComponent {
     this.projectService.getProjectById(this.$stateParams.id)
       .then(project => {
         this.project = project;
+        this.getMembers();
       });
+  }
+
+  getMembers(){
+    this.project.members.forEach((member) => {
+      this.projectService.getMemberByEmail(member.email).then(member => {
+        this.members.push(member[0]);
+        console.log(this.members);
+      });
+    });
   }
 }
 

@@ -51,4 +51,14 @@ export default class ProjectService{
 			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/members/${id}`,
 			{"email": email});
 	}
+
+	getMemberByEmail(email){
+		return this.$http.get(
+			`${this.constants.API_URL.API}/${this.constants.API_URL.USERS}`, 
+			{
+				params: {
+					email: email
+				}	
+			}).then(response => response.data);
+	}
 }

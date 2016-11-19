@@ -2,6 +2,7 @@
 const angular = require('angular');
 
 import sprintsList from '../../../sprint/components/sprints-list/sprints-list.component';
+import membersList from '../members-list/members-list.component';
 
 export class projectDetailsComponent {
   /*@ngInject*/
@@ -11,7 +12,6 @@ export class projectDetailsComponent {
   	this.ProjectService = ProjectService;
   	this.$stateParams = $stateParams;
   	this.$state = $state;
-    this.addMemberMode = false;
     this.statusOptions = ["Планування", "Аналіз", "Розробка", "Підтримка"];
   }
 
@@ -26,12 +26,6 @@ export class projectDetailsComponent {
     this.notificationService.createNotification(notification);
   	this.ProjectService.deleteProject(this.$stateParams.id);
   	this.$state.go('projects');
-  }
-
-  addMember(){
-    this.ProjectService.addMember(this.$stateParams.id, this.currentAddMember);
-    this.currentAddMember = "";
-    this.addMemberMode = false;
   }
 
   saveProject(){
@@ -49,7 +43,7 @@ export class projectDetailsComponent {
   }
 }
 
-export default angular.module('projectManagerApp.project-details', [sprintsList])
+export default angular.module('projectManagerApp.project-details', [sprintsList, membersList])
   .component('projectDetails', {
     template: require('./project-details.component.html'),
     bindings: {project: '<'},

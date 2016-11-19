@@ -31,6 +31,7 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 @import 'states/main/notification/notification.component';
 @import '../constants';
 @import '../profile/profile';
+@import '../project/components/members-list/members-list.component';
 @import '../project/components/project-details/project-details.component';
 @import '../project/states/create/create';
 @import '../project/states/project/project';

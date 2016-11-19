@@ -34,6 +34,15 @@ export function updateUser(req, res) {
  * restriction: 'admin'
  */
 export function index(req, res) {
+
+  if(req.query.email){
+    return User.find({email: req.query.email}).exec()
+      .then(user => {
+        res.status(200).json(user);
+      })
+      .catch(handleError(res));
+  }
+
   return User.find({}, '-salt -password').exec()
     .then(users => {
       res.status(200).json(users);
