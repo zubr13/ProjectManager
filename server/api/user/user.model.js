@@ -34,7 +34,7 @@ var UserSchema = new Schema({
     }
   },
   provider: String,
-  avatar: String,
+  avatar: {type: String, default: "https://cdn3.iconfinder.com/data/icons/rcons-user-action/32/boy-512.png"},
   salt: String,
   facebook: {},
   google: {},

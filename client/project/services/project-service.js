@@ -35,4 +35,14 @@ export default class ProjectService{
 	addTask(id, task){
 		return this.$http.put(`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/${id}/addtask`, task).then(response => response.data);
 	}
+
+	deleteSprint(id){
+		return this.$http.delete(
+			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/${id}/sprint`);
+	}
+
+	deleteTask(id){
+		return this.$http.delete(
+			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/task/${id}`);
+	}
 }

@@ -138,3 +138,18 @@ export function destroy(req, res) {
     .then(removeEntity(res))
     .catch(handleError(res));
 }
+
+export function deleteSprint(req, res) {
+
+  return Project.update({"sprints._id": req.params.id},  {$pull: {"sprints": {"_id": req.params.id} }}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+export function deleteTask(req, res) {
+  console.log(req.params.id);
+
+  return Project.update({"sprints.tasks._id": req.params.id},  {$pull: {"sprints.$.tasks": {"_id": req.params.id} }}).exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}

@@ -12,6 +12,7 @@ export class ProfileComponent {
   constructor(profileService, $stateParams) {
     this.profileService = profileService; 
     this.user = {};
+    this.defaultAvatar = "https://image.freepik.com/free-icon/user-male-shape-in-a-circle-ios-7-interface-symbol_318-35357.jpg";
     this.$stateParams = $stateParams;
     this.getUserById();
   }

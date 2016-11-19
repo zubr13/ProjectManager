@@ -2,6 +2,9 @@
 	<h3>Спрінти: </h3>
 	<create-sprint-form sprints="$ctrl.sprints" project="$ctrl.project"></create-sprint-form>
 	<div class="sprint-item" ng-repeat="sprint in $ctrl.sprints">
+		<button class="right-button btn btn-danger" ng-click="$ctrl.deleteSprint(sprint)">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+		</button> 
 		<h4>Назва спрінту: </h4>
 		<div class="pointer sprint-title" editable-text="sprint.name"><strong>{{sprint.name}}</strong></div>
 		<h4> <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Опис спрінту: </h4>

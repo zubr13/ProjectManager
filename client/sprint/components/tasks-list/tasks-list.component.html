@@ -2,6 +2,9 @@
 	<h3>Задачі: </h3>
 	<create-task-form tasks="$ctrl.tasks" sprint="$ctrl.sprint"></create-task-form>
 	<div class="task-item" ng-repeat="task in $ctrl.tasks">
+		<button class="right-button btn btn-danger" ng-click="$ctrl.deleteTask(task)">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+		</button> 
 		<h4 ><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Назва задачі</h4>
 		<div class="pointer task-title" editable-text="task.name"><strong>{{task.name}}</strong></div>
 		<button ng-click="$ctrl.toggleDetails($index)" class="btn btn-default">Деталі</button>
