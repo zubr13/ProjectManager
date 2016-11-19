@@ -11,6 +11,7 @@ var ProjectSchema = new mongoose.Schema({
   files: [{
   	path:  String
   }],
+  managerEmail: String,
   sprints: [{
     name: String,
     description: String,
@@ -31,6 +32,9 @@ var ProjectSchema = new mongoose.Schema({
       status: String,
       priority: String,
       implementationTime: String
+    }],
+    members: [{
+      email: String
     }],
     active: Boolean
   }]

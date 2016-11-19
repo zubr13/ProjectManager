@@ -61,6 +61,11 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
       currentUser = new User();
     },
 
+    updateUser(user) {
+      console.log(user);
+      $http.put(`/api/users/${user._id}`, user);
+    },
+
     /**
      * Create a new user
      *

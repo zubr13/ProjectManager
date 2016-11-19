@@ -21,7 +21,6 @@ export class ProjectComponent {
     this.projectService.getProjectById(this.$stateParams.id)
       .then(project => {
         this.project = project;
-        console.log(this.project);
       });
   }
 }

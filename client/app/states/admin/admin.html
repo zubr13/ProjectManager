@@ -5,6 +5,7 @@
 	    <div class="user-info">
 	        <strong>{{user.name}}</strong><br>
 	        <span class="text-muted">{{user.email}}</span>
+          <div>Права юзера: <span editable-text="user.role" onaftersave="admin.updateUser(user)">{{user.role}}</span></div>
 	    </div>
         <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
     </li>

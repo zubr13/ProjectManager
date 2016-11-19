@@ -18,6 +18,17 @@ function handleError(res, statusCode) {
   };
 }
 
+export function updateUser(req, res) {
+  if(req.body._id) {
+    delete req.body._id;
+  }
+  return User.update({_id: req.params.id}, req.body).exec()
+    .then(user => {
+      res.send(user);
+    })
+    .catch(handleError(res));
+}
+
 /**
  * Get list of users
  * restriction: 'admin'

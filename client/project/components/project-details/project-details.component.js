@@ -11,6 +11,7 @@ export class projectDetailsComponent {
   	this.ProjectService = ProjectService;
   	this.$stateParams = $stateParams;
   	this.$state = $state;
+    this.addMemberMode = false;
     this.statusOptions = ["Планування", "Аналіз", "Розробка", "Підтримка"];
   }
 
@@ -25,6 +26,12 @@ export class projectDetailsComponent {
     this.notificationService.createNotification(notification);
   	this.ProjectService.deleteProject(this.$stateParams.id);
   	this.$state.go('projects');
+  }
+
+  addMember(){
+    this.ProjectService.addMember(this.$stateParams.id, this.currentAddMember);
+    this.currentAddMember = "";
+    this.addMemberMode = false;
   }
 
   saveProject(){

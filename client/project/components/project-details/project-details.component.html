@@ -1,6 +1,16 @@
 <div class="project-container">
 	<div class="project-detail-card">
 		<div class="project-details">
+			<button ng-click="$ctrl.addMemberMode=true" ng-show="!$ctrl.addMemberMode"
+			 	class="btn btn-success">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true">
+				</span> Додати учасників
+				</button>
+			<div ng-show="$ctrl.addMemberMode" class="addMemberBlock form-group">
+				<label for="addMemberInput" class="control-label">Введіть емейл користувача</label>
+				<input type="text" ng-model="$ctrl.currentAddMember" class="form-control add-member-button" id="addMemberInput">
+				<button ng-click="$ctrl.addMember()" class="btn btn-success">Додати</button>
+			</div>
 			<h3 class="pointer" editable-text="$ctrl.project.name">{{$ctrl.project.name}}</h3>
 			<h4>Опис: <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></h4>
 			<p class="description pointer" editable-textarea="$ctrl.project.description" e-rows="5" e-cols="160"> {{$ctrl.project.description}}</p>
