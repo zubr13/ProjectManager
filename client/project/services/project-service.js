@@ -22,6 +22,12 @@ export default class ProjectService{
 		return this.$http.delete(`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/${id}`)
 	}
 
+	saveProject(project){
+		return this.$http.put(
+			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/${project._id}`,
+			project);
+	}
+
 	addSprint(id, sprint){
      	return this.$http.put(`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/${id}/addsprint`, sprint).then(response => response.data);
 	}

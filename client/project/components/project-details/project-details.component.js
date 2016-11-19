@@ -26,6 +26,20 @@ export class projectDetailsComponent {
   	this.ProjectService.deleteProject(this.$stateParams.id);
   	this.$state.go('projects');
   }
+
+  saveProject(){
+    const currentUser = this.Auth.getCurrentUserSync();
+    const notification = {
+      text: `Вніс зміни до проекту під назвою '${this.project.name}'`,
+      creator: currentUser.name,
+      creatorAvatar: currentUser.avatar,
+      creatorUrl: currentUser._id
+    }
+    this.notificationService.createNotification(notification);
+    this.ProjectService.saveProject(this.project).then((data) => {
+      this.$state.go('projects');
+    });
+  }
 }
 
 export default angular.module('projectManagerApp.project-details', [sprintsList])
