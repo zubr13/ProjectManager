@@ -22,6 +22,12 @@ var ProjectSchema = new mongoose.Schema({
     storyPoints: Number,
     beginDate: {type: Date, default: Date.now},
     endDate: {type: Date},
+    comments: [{
+      text: String,
+      author: String,
+      avatar: String,
+      date: {type: Date, default: Date.now}
+    }],
     participants: [{
       name: String,
       role: String
@@ -34,7 +40,13 @@ var ProjectSchema = new mongoose.Schema({
       storyPoint: Number,
       status: String,
       priority: String,
-      implementationTime: String
+      implementationTime: String,
+      comments: [{
+        text: String,
+        author: String,
+        avatar: String,
+        date: {type: Date, default: Date.now}
+      }],
     }],
     active: Boolean
   }]

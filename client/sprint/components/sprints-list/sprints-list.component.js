@@ -2,6 +2,7 @@
 const angular = require('angular');
 import tasksList from '../tasks-list/tasks-list.component';
 import createSprintForm from '../create-sprint-form/create-sprint-form.component';
+import commentsComponent from '../../../project/components/comments/comments.component';
 
 export class sprintsListComponent {
   /*@ngInject*/
@@ -27,7 +28,8 @@ export class sprintsListComponent {
   }
 }
 
-export default angular.module('projectManagerApp.sprints-list', [tasksList, createSprintForm])
+export default angular.module('projectManagerApp.sprints-list', [tasksList, createSprintForm, 
+  commentsComponent])
   .component('sprintsList', {
     template: require('./sprints-list.component.html'),
     bindings: { sprints: "<", project: "<"},
