@@ -1,18 +1,19 @@
-<!-- <div ng-repeat="member in members">
-	<span>member.name</span>
-	<img ng-src="{{member.avatar}}" alt="">
-	
-</div> -->
 <div class="members-list">
-	<div>dsa sad afd  fda</div> 
+	<h2>Учасники проекту</h2>
+	<hr>
+	<div ui-sref="profile({id: member._id })" class="member-item pointer" ng-repeat="member in $ctrl.members">
+		<img ng-src="{{member.avatar}}" height="60" alt="">	
+		<div>{{member.name}}</div>
+	</div>
+	<hr>
 	<button ng-click="$ctrl.addMemberMode=true" ng-show="!$ctrl.addMemberMode"
- 	class="btn btn-success">
-	<span class="glyphicon glyphicon-plus" aria-hidden="true">
-	</span> Додати учасників
-</button>
-<div ng-show="$ctrl.addMemberMode" class="addMemberBlock form-group">
-	<label for="addMemberInput" class="control-label">Введіть емейл користувача</label>
-	<input type="text" ng-model="$ctrl.currentAddMember" class="form-control add-member-button" id="addMemberInput">
-	<button ng-click="$ctrl.addMember()" class="btn btn-success">Додати</button>
-</div>
+ 		class="btn btn-success">
+		<span class="glyphicon glyphicon-plus" aria-hidden="true">
+		</span> Додати учасників
+	</button>
+	<div ng-show="$ctrl.addMemberMode" class="addMemberBlock form-group">
+		<label for="addMemberInput" class="control-label">Введіть емейл користувача</label>
+		<input type="text" ng-model="$ctrl.currentAddMember" class="form-control add-member-button" id="addMemberInput">
+		<button ng-click="$ctrl.addMember()" class="btn btn-success">Додати</button>
+	</div>
 </div>

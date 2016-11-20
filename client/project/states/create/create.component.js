@@ -11,6 +11,7 @@ export class CreateComponent {
   /*@ngInject*/
   constructor(projectService, $state, notificationService, Auth) {
     this.currentProject = {};
+    this.currentProject.members = [];
     this.projectService = projectService;
     this.$state = $state;
     this.notificationService = notificationService;
@@ -18,10 +19,11 @@ export class CreateComponent {
   }
 
   createProject(){
+    const currentUser = this.Auth.getCurrentUserSync();
+    this.currentProject.members.push({email: currentUser.email});
     this.projectService.createProject(this.currentProject).then(project => {
       this.$state.go('project', { id: project.data._id });
     });
-    const currentUser = this.Auth.getCurrentUserSync();
     const notification = {
       text: `Створив проект під назвою '${this.currentProject.name}' зі статусом '${this.currentProject.status}'`,
       creator: currentUser.name,

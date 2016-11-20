@@ -30,7 +30,6 @@ export class ProjectComponent {
     this.project.members.forEach((member) => {
       this.projectService.getMemberByEmail(member.email).then(member => {
         this.members.push(member[0]);
-        console.log(this.members);
       });
     });
   }

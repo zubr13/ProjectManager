@@ -94,6 +94,11 @@ User.find({}).remove()
       files: [{
         name:  "filePath"
       }],
+      members: [{
+        email: "admin@example.com"
+      },{
+        email: "test@example.com"
+      }],
       sprints: [{
         name: "Cпринт 1",
         description: "Реалізація початкового функціоналу",
@@ -190,6 +195,11 @@ User.find({}).remove()
       files: [{
         name:  "filePath"
       }],
+      members: [{
+        email: "admin@example.com"
+      },{
+        email: "test@example.com"
+      }],
       sprints: [{
         name: "Cпринт 1",
         description: "Реалізація початкового функціоналу",
@@ -243,6 +253,11 @@ User.find({}).remove()
       status:  "Розробка",
       files: [{
         name:  "filePath"
+      }],
+      members: [{
+        email: "admin@example.com"
+      },{
+        email: "test@example.com"
       }],
       sprints: [{
         name: "Cпринт 1",

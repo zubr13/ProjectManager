@@ -10,7 +10,12 @@ export class membersListComponent {
   }
 
   addMember(){
-    this.ProjectService.addMember(this.$stateParams.id, this.currentAddMember);
+    const currentMember = this.currentAddMember;
+    this.ProjectService.addMember(this.$stateParams.id, this.currentAddMember).then(() => {
+      this.ProjectService.getMemberByEmail(currentMember).then(users => {
+        this.members.push(users[0]);
+      });
+    });
     this.currentAddMember = "";
     this.addMemberMode = false;
   }
