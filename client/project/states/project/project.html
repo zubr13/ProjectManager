@@ -1,2 +1,8 @@
-<members-list members="projectCtrl.members"></members-list>
-<project-details project="projectCtrl.project"></project-details>
+<div ng-show="projectCtrl.isCurentUserHasAccess">
+	<members-list members="projectCtrl.members"></members-list>
+	<project-details project="projectCtrl.project"></project-details>
+</div>
+<div class="forbidden-block" ng-show="!projectCtrl.isCurentUserHasAccess">
+	<h1>Не має доступу</h1>
+	<p>Вибачте, але ви не маєте доступу до цього проекту! Зверніться до його учасників, щоб вам було надано відповідні права</p>
+</div>

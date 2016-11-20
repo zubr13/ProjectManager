@@ -8,28 +8,26 @@ import ProjectService from '../../services/project-service';
 
 export class ProjectsComponent {
   /*@ngInject*/
-  constructor(ProjectService, $state) {
+  constructor(Auth, projectService, $state) {
     this.$state = $state;
-    this.ProjectService = ProjectService;
+    this.projectService = projectService;
     this.projects = [];
     this.getProjects();
   }
 
   getProjects(){
-    this.ProjectService.getProjects().then(projects => {
+    this.projectService.getProjects().then(projects => {
       this.projects = projects;
       return this.projects;
     });
   }
   
-  deleteProject(project){
-      const deletedIndex = this.projects.indexOf(project);
-      this.projects.splice(deletedIndex, 1);
-    this.ProjectService.deleteProject(project._id);
-  }
+  // deleteProject(project){
+  //     const deletedIndex = this.projects.indexOf(project);
+  //     this.projects.splice(deletedIndex, 1);
+  //   this.projectService.deleteProject(project._id);
+  // }
 }
-
-ProjectsComponent.$inject = ['ProjectService'];
 
 export default angular.module('projectManagerApp.projects', [uiRouter])
   .config(routes)
