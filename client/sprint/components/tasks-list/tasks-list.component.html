@@ -24,6 +24,7 @@
 		    <h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Час виконання: </h4>
 		    <div class="pointer" editable-text="task.implementationTime">{{task.implementationTime}}</div>
 		    <hr>
+		    <comments comments="task.comments" on-add-comment="$ctrl.addComment(task, comment)"></comments>
 	    </div>
 	</div>
 <div>

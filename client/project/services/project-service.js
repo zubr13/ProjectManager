@@ -68,9 +68,9 @@ export default class ProjectService{
 			comment);
 	}
 
-	addTaskComment(id, comment){
+	addTaskComment(sprint, tasks){
 		return this.$http.put(
-			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/tasks/${id}/comment`,
-			comment);
+			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/tasks/${sprint._id}/comment`,
+			tasks);
 	}
 }

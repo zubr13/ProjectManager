@@ -139,7 +139,18 @@ User.find({}).remove()
           storyPoint: 2,
           status: "Активний",
           priority: "high",
-          implementationTime: "2d 6h"
+          implementationTime: "2d 6h",
+          comments: [{
+            text: "Ця задача нецілком зрозуміла для мене",
+            author: "Ковальов Дмитро",
+            avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+            profileUrl: "4edd40c86762e0fb12000004"
+          },{
+            text: "Що саме незрозуміло?",
+            author: "Шевченко Сергій",
+            avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+            profileUrl: "4edd40c86762e0fb12000003"
+          }]
         },{
           name: "Розробка модулю для генерації звіту",
           description: "Розробка модулю, що буде генерувати звіт по продажу для користувача",
@@ -148,7 +159,18 @@ User.find({}).remove()
           storyPoint: 2,
           status: "Активний",
           priority: "Високий",
-          implementationTime: "2d 6h"
+          implementationTime: "2d 6h",
+          comments: [{
+            text: "Ця задача нецілком зрозуміла для мене",
+            author: "Ковальов Дмитро",
+            avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+            profileUrl: "4edd40c86762e0fb12000004"
+          },{
+            text: "Що саме незрозуміло?",
+            author: "Шевченко Сергій",
+            avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+            profileUrl: "4edd40c86762e0fb12000003"
+          }]
         }]
       },
       {
@@ -191,7 +213,18 @@ User.find({}).remove()
           storyPoint: 2,
           status: "Активний",
           priority: "high",
-          implementationTime: "2d 6h"
+          implementationTime: "2d 6h",
+          comments: [{
+            text: "Ця задача нецілком зрозуміла для мене",
+            author: "Ковальов Дмитро",
+            avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+            profileUrl: "4edd40c86762e0fb12000004"
+          },{
+            text: "Що саме незрозуміло?",
+            author: "Шевченко Сергій",
+            avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+            profileUrl: "4edd40c86762e0fb12000003"
+          }]
         },{
           name: "Розробка модулю для генерації звіту",
           description: "Розробка модулю, що буде генерувати звіт по продажу для користувача",
@@ -200,7 +233,18 @@ User.find({}).remove()
           storyPoint: 2,
           status: "Активний",
           priority: "Високий",
-          implementationTime: "2d 6h"
+          implementationTime: "2d 6h",
+          comments: [{
+            text: "Ця задача нецілком зрозуміла для мене",
+            author: "Ковальов Дмитро",
+            avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+            profileUrl: "4edd40c86762e0fb12000004"
+          },{
+            text: "Що саме незрозуміло?",
+            author: "Шевченко Сергій",
+            avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+            profileUrl: "4edd40c86762e0fb12000003"
+          }]
         }]
       }]
     }, 
@@ -261,7 +305,18 @@ User.find({}).remove()
           storyPoint: 2,
           status: "active",
           priority: "high",
-          implementationTime: "1d 6h"
+          implementationTime: "1d 6h",
+          comments: [{
+            text: "Ця задача нецілком зрозуміла для мене",
+            author: "Ковальов Дмитро",
+            avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+            profileUrl: "4edd40c86762e0fb12000004"
+          },{
+            text: "Що саме незрозуміло?",
+            author: "Шевченко Сергій",
+            avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+            profileUrl: "4edd40c86762e0fb12000003"
+          }]
         },{
           name: "Проектування сутності для звіту",
           description: "Проектування сутності для звіту у базі даних",
@@ -270,7 +325,18 @@ User.find({}).remove()
           storyPoint: 2,
           status: "Активний",
           priority: "Високий",
-          implementationTime: "2d 6h"
+          implementationTime: "2d 6h",
+          comments: [{
+            text: "Ця задача нецілком зрозуміла для мене",
+            author: "Ковальов Дмитро",
+            avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+            profileUrl: "4edd40c86762e0fb12000004"
+          },{
+            text: "Що саме незрозуміло?",
+            author: "Шевченко Сергій",
+            avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+            profileUrl: "4edd40c86762e0fb12000003"
+          }]
         }]
       }]
     },
@@ -331,7 +397,18 @@ User.find({}).remove()
           storyPoint: 2,
           status: "Активний",
           priority: "Високий",
-          implementationTime: "2d 6h"
+          implementationTime: "2d 6h",
+          comments: [{
+            text: "Ця задача нецілком зрозуміла для мене",
+            author: "Ковальов Дмитро",
+            avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+            profileUrl: "4edd40c86762e0fb12000004"
+          },{
+            text: "Що саме незрозуміло?",
+            author: "Шевченко Сергій",
+            avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+            profileUrl: "4edd40c86762e0fb12000003"
+          }]
         },{
           name: "Авторизація через Facebook",
           description: "Розробка авторизації через Facebook",
@@ -340,7 +417,18 @@ User.find({}).remove()
           storyPoint: 2,
           status: "active",
           priority: "high",
-          implementationTime: "2d 6h"
+          implementationTime: "2d 6h",
+          comments: [{
+            text: "Ця задача нецілком зрозуміла для мене",
+            author: "Ковальов Дмитро",
+            avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+            profileUrl: "4edd40c86762e0fb12000004"
+          },{
+            text: "Що саме незрозуміло?",
+            author: "Шевченко Сергій",
+            avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+            profileUrl: "4edd40c86762e0fb12000003"
+          }]
         }]
       }]
     })

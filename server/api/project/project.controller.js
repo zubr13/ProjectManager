@@ -175,11 +175,16 @@ export function addSprintComment(req, res) {
 }
 
 export function addTaskComment(req, res) {
-
-  return Project.findOneAndUpdate({_id: req.params.id}, {$push: {"members": req.body}},
-   {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
-    .then(respondWithResult(res))
-    .catch(handleError(res));
+  if(req.body._id) {
+    delete req.body._id;
+  }
+  Project.update({
+    "sprints._id": req.params.id
+  },
+  { "$set": { "sprints.$.tasks": req.body } },
+  {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+  .then(respondWithResult(res))
+  .catch(handleError(res));
 }
 
 
