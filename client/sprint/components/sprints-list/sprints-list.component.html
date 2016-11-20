@@ -22,7 +22,7 @@
 			<div><strong>Спеціалізація: </strong><span class="pointer" editable-text="participant.role">{{participant.role}}</span></div>
 			<hr>
 		</div>
-		<comments comments="sprint.comments"></comments>	
+		<comments comments="sprint.comments" on-add-comment="$ctrl.addComment(sprint, comment)"></comments>	
 		<tasks-list tasks="sprint.tasks" sprint="sprint"></tasks-list>
 	</div>
 </div>

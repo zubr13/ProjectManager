@@ -26,6 +26,18 @@ export class sprintsListComponent {
     }
     this.notificationService.createNotification(notification);
   }
+
+  addComment(sprint, comment){
+    const currentUser = this.Auth.getCurrentUserSync();
+    const notification = {
+      text: `Додав коментар '${comment.text}' у спрінт під назвою '${sprint.name}' у проекті '${this.project.name}'`,
+      creator: currentUser.name,
+      creatorAvatar: currentUser.avatar,
+      creatorUrl: currentUser._id
+    }
+    this.notificationService.createNotification(notification);
+    this.projectService.addSprintComment(sprint._id, comment);
+  }
 }
 
 export default angular.module('projectManagerApp.sprints-list', [tasksList, createSprintForm, 
