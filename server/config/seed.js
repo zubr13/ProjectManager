@@ -120,6 +120,17 @@ User.find({}).remove()
             role: "Розробник"
           }
         ],
+        comments: [{
+          text: "Я вважаю, що нам потрібно додаткове обговорення задач спрінта",
+          author: "Ковальов Дмитро",
+          avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+          profileUrl: "4edd40c86762e0fb12000004"
+        },{
+          text: "Цілком підтримую",
+          author: "Шевченко Сергій",
+          avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+          profileUrl: "4edd40c86762e0fb12000003"
+        }],
         tasks: [{
           name: "Розробка архітектури ядра",
           description: "Розробка архітектури основної частини веб-додатку",
@@ -161,6 +172,17 @@ User.find({}).remove()
             role: "Розробник"
           }
         ],
+        comments: [{
+          text: "Не забувайте, що на кінці тижня відбудется демо для клієнта",
+          author: "Ковальов Дмитро",
+          avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+          profileUrl: "4edd40c86762e0fb12000004"
+        },{
+          text: "Потрібно обрати спікера",
+          author: "Шевченко Сергій",
+          avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+          profileUrl: "4edd40c86762e0fb12000003"
+        }],
         tasks: [{
           name: "Розробка архітектури ядра",
           description: "Розробка архітектури основної частини веб-додатку",
@@ -220,6 +242,17 @@ User.find({}).remove()
             role: "Розробник"
           }
         ],
+        comments: [{
+          text: "Я вважаю, що нам потрібно додаткове обговорення задач спрінта",
+          author: "Ковальов Дмитро",
+          avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+          profileUrl: "4edd40c86762e0fb12000004"
+        },{
+          text: "Цілком підтримую",
+          author: "Шевченко Сергій",
+          avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+          profileUrl: "4edd40c86762e0fb12000003"
+        }],
         tasks: [{
           name: "Проектування сутності користувача",
           description: "Проектування сутності користувача у базі даних",
@@ -279,6 +312,17 @@ User.find({}).remove()
             role: "Розробник"
           }
         ],
+        comments: [{
+          text: "Я вважаю, що нам потрібно додаткове обговорення задач спрінта",
+          author: "Ковальов Дмитро",
+          avatar: "http://creativestockphoto.com/wp-content/uploads/2014/10/images-of-man-and-woman-in-love.jpg",
+          profileUrl: "4edd40c86762e0fb12000004"
+        },{
+          text: "Цілком підтримую",
+          author: "Шевченко Сергій",
+          avatar: "http://combiboilersleeds.com/images/man/man-4.jpg",
+          profileUrl: "4edd40c86762e0fb12000003"
+        }],
         tasks: [{
           name: "Авторизація через Google",
           description: "Розробка авторизації через Google",

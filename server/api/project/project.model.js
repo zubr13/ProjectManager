@@ -26,6 +26,7 @@ var ProjectSchema = new mongoose.Schema({
       text: String,
       author: String,
       avatar: String,
+      profileUrl: String,
       date: {type: Date, default: Date.now}
     }],
     participants: [{
@@ -45,6 +46,7 @@ var ProjectSchema = new mongoose.Schema({
         text: String,
         author: String,
         avatar: String,
+        profileUrl: String,
         date: {type: Date, default: Date.now}
       }],
     }],

@@ -61,4 +61,16 @@ export default class ProjectService{
 				}	
 			}).then(response => response.data);
 	}
+
+	addSprintComment(){
+		return this.$http.put(
+			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/sprints/${id}/comment`,
+			{"email": email});
+	}
+
+	addTaskComment(){
+		return this.$http.put(
+			`${this.constants.API_URL.API}/${this.constants.API_URL.PROJECT}/tasks/${id}/comment`,
+			{"email": email});
+	}
 }

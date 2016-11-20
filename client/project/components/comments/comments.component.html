@@ -1,1 +1,15 @@
-<h1>Comments</h1>
+<div class="comments-block">
+	<div class="comment-item" ng-repeat="comment in $ctrl.comments">
+		<div class="comment-text">{{comment.text}}</div>
+		<hr>
+		<div class="author-block">
+			<img class="author-avatar" ng-src="{{comment.avatar}}" height="50" alt="">
+			<h4>{{comment.author}}</h4>
+		</div>
+		<div class="comment-date">
+			{{comment.date | date: "yyyy-MM-dd, HH:mm:ss"}}
+		</div>
+	</div>
+	<input type="text" ng-model="$ctrl.newComment" class="comment-input form-control">
+	<button class="btn btn-default" ng-click="$ctrl.addComment()">Додати коментар</button>
+</div>
